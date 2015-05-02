@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/linearLayout"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="INSEGNAMENTO"
+            android:id="@+id/rigaTestoInsegnamento"
+            android:textColor="@color/abc_primary_text_material_light"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CREDITI - DATA"
+            android:id="@+id/rigaTestoCreditiData"
+            android:textColor="#ff969696"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="30+"
+        android:id="@+id/rigaTestoVoto"
+        android:textColor="@color/accent"
+        android:layout_alignBottom="@+id/linearLayout"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"/>
+</LinearLayout>

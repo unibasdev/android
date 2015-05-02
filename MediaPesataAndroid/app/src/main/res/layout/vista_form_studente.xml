@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/StringaCognome"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="7dp"/>
+
+    <EditText
+        android:id="@+id/testoCognome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="7dp"
+        android:inputType="textCapWords|textPersonName"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/StringaNome"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="7dp"/>
+
+    <EditText
+        android:id="@+id/testoNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="7dp"
+        android:inputType="textCapWords|textPersonName"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/StringaMatricola"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="7dp"/>
+
+    <EditText
+        android:id="@+id/testoMatricola"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="7dp"
+        android:inputType="number"/>
+
+</LinearLayout>

@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/menu_modifica_studente"
+        android:title="@string/StringaModificaStudente"
+        android:icon="@drawable/ic_action_edit"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/menu_importa"
+        android:title="@string/StringaImporta"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_esporta"
+        android:title="@string/StringaEsporta"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_informazioni"
+        android:title="@string/StringaInformazioni"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+</menu>

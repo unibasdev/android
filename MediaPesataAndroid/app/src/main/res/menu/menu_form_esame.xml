@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools">
+    <item android:id="@+id/menu_annulla"
+          android:title="@string/StringaAnnulla"
+          app:showAsAction="always"/>
+    <item android:id="@+id/menu_ok"
+          android:title="@string/StringaOk"
+          app:showAsAction="always"/>
+</menu>

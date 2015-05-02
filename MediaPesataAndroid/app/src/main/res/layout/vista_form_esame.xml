@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/StringaInsegnamento"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"/>
+
+        <EditText
+            android:id="@+id/testoInsegnamento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="7dp"
+            android:inputType="textCapWords"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/StringaCrediti"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"/>
+
+        <EditText
+            android:id="@+id/testoCrediti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:layout_marginTop="2dp"
+            android:singleLine="true"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/StringaVoto"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <EditText
+                android:id="@+id/testoVoto"
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:layout_marginTop="2dp"
+                android:singleLine="true"
+                android:layout_marginLeft="7dp"/>
+
+            <CheckBox
+                android:id="@+id/checkBoxLode"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/StringaLode"
+                android:layout_marginRight="7dp"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/StringaData"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"/>
+
+        <DatePicker
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pickerData"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"/>
+
+    </LinearLayout>
+</ScrollView>
