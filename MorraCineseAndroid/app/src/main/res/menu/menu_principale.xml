@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      tools:context=".Principale">
+    <item
+        android:id="@+id/menuNuovaPartita"
+        android:title="@string/nuovaPartita"
+        android:icon="@drawable/ic_action_refresh"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/menuInterrompiPartita"
+        android:title="@string/interrompiPartita"
+        android:icon="@drawable/ic_action_remove"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/menuInformazioni"
+        android:title="@string/informazioni"
+        app:showAsAction="never"/>
+</menu>

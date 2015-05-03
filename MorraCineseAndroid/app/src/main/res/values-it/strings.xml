@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">La Morra Cinese</string>
+    <string name="informazioni">Informazioni</string>
+    <string name="partiteVinteGiocatore">Partite vinte dal giocatore:</string>
+    <string name="partiteVinteComputer">Partite vinte dal computer:</string>
+    <string name="giocaLaTuaPartita">Gioca la tua partita!</string>
+    <string name="pareggi">Pareggi:</string>
+    <string name="nuovaPartita">Nuova Partita</string>
+    <string name="interrompiPartita">Interrompi</string>
+    <string name="maniVinteGiocatore">Mani vinte dal giocatore:</string>
+    <string name="maniVinteDalComputer">Mani vinte dal computer:</string>
+    <string name="carta">Carta</string>
+    <string name="forbici">Forbici</string>
+    <string name="sasso">Sasso</string>
+    <string name="giocataGiocatore">Giocata del Giocatore</string>
+    <string name="giocataComputer">Giocata del Computer</string>
+    <string name="benvenuto">Benvenuto nella Morra Cinese</string>
+    <string name="usaIBottoniPerIniziare">Usa i bottoni per iniziare</string>
+    <string name="partitaInCorso">La partita è in corso...</string>
+    <string name="scegliGiocata">Scegli la tua giocata...</string>
+    <string name="haiVintoLaMano">Bravo, hai vinto la mano</string>
+    <string name="purtroppoHaiPersoLaMano">Purtroppo hai perso la mano</string>
+    <string name="siEVerificatoUnPareggio">C\'è stato un pareggio</string>
+    <string name="partitaConclusa">Partita conclusa</string>
+    <string name="bravoHaiVintoLaPartita">Bravo, hai vinto la partita!</string>
+    <string name="partitaVintaDalComputer">Purtroppo ha vinto il computer...</string>
+    <string name="partitaInterrotta">Partita interrotta</string>
+    <string name="iniziaNuovaPartita">Inizia una nuova partita</string>
+    <string name="stringaInformazioni">Esempio sviluppato a scopo didattico\nCorso di Laurea in Informatica\nUniversità della Basilicata\ngiansalvatore.mecca@unibas.it\ndonatello.santoro@unibas.it</string>
+</resources>

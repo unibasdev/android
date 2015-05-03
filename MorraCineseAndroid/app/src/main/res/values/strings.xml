@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rock, Paper, Scissors</string>
+    <string name="informazioni">About</string>
+    <string name="partiteVinteGiocatore">Games won by you:</string>
+    <string name="partiteVinteComputer">Games won by the computer:</string>
+    <string name="giocaLaTuaPartita">Play your game!</string>
+    <string name="pareggi">Draws:</string>
+    <string name="nuovaPartita">New game</string>
+    <string name="interrompiPartita">Stop</string>
+    <string name="maniVinteGiocatore">Hands won by you:</string>
+    <string name="maniVinteDalComputer">Hands won by the computer:</string>
+    <string name="carta">Paper</string>
+    <string name="forbici">Scissors</string>
+    <string name="sasso">Rock</string>
+    <string name="giocataGiocatore">Your play</string>
+    <string name="giocataComputer">Computer\'s play</string>
+    <string name="benvenuto">Welcome to Rock, Paper, Scissors</string>
+    <string name="usaIBottoniPerIniziare">Use the buttons to start</string>
+    <string name="partitaInCorso">The game is on...</string>
+    <string name="scegliGiocata">Choose your play...</string>
+    <string name="haiVintoLaMano">Excellent, you won this hand!</string>
+    <string name="purtroppoHaiPersoLaMano">Sorry, you lost this hand</string>
+    <string name="siEVerificatoUnPareggio">It was a draw</string>
+    <string name="partitaConclusa">Game over</string>
+    <string name="bravoHaiVintoLaPartita">Excellent, you won this game!</string>
+    <string name="partitaVintaDalComputer">Bad luck, the computer won this one...</string>
+    <string name="partitaInterrotta">Game stopped</string>
+    <string name="iniziaNuovaPartita">Start a new game</string>
+    <string name="stringaInformazioni">This is a teaching example\nSchool of Computer Science\nUniversity of Basilicata\ngiansalvatore.mecca@unibas.it\ndonatello.santoro@unibas.it</string>
+</resources>
