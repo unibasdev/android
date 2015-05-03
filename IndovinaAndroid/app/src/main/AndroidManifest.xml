@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="it.unibas.indovinaandroid">
+
+    <application
+        android:name="it.unibas.indovinaandroid.Applicazione"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.ActivityIniziale"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ActivityPartita"
+            android:label="@string/title_partita">
+        </activity>
+        <activity
+            android:name=".activity.ActivityImpostazioni"
+            android:label="@string/informazioni"
+            android:parentActivityName=".activity.ActivityPartita"
+            android:theme="@style/SettingsTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.ActivityPartita"/>
+        </activity>
+
+    </application>
+
+</manifest>

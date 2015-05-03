@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/testoNome"
+                android:hint="@string/suggerimento_nome"
+                android:capitalize="words"
+                android:inputType="textCapWords|textPersonName"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView"
+                android:src="@drawable/ic_numberguess"
+                android:layout_gravity="center_horizontal"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/corsoDiLaureaInformatica"
+                android:id="@+id/testoLink"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:textColor="#ff2e51ff"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <com.gc.materialdesign.views.ButtonFloatSmall
+        android:id="@+id/bottoneInizia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/bottone_selezionato"
+        android:layout_gravity="bottom|right"
+        materialdesign:iconDrawable="@drawable/ic_action_forward"/>
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:buttonStyle">@style/ColoredButton</item>
+    </style>
+
+    <!-- Stile Bottoni -->
+    <style name="ColoredButton" parent="android:Widget.Holo.Light.Button">
+        <item name="android:background">@drawable/col_button_selector</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">64dp</item>
+    </style>
+
+    <style name="SettingsTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+    </style>
+
+    <!--<style name="FloatingColorActionButton" parent="Material.Drawable.Ripple.Touch.Light">-->
+        <!--<item name="rd_rippleColor">#33000000</item>-->
+        <!--<item name="fab_backgroundColor">#FF2196F3</item>-->
+        <!--<item name="fab_elevation">4dp</item>-->
+        <!--<item name="fab_iconLineMorphing">@style/FloatingActionButtonIcon</item>-->
+        <!--<item name="rd_delayClick">true</item>-->
+    <!--</style>-->
+
+    <!--<style name="FloatingActionButtonIcon" >-->
+        <!--&lt;!&ndash;<item name="lmd_state">@xml/fab_icon_states</item>&ndash;&gt;-->
+        <!--<item name="lmd_curState">0</item>-->
+        <!--<item name="lmd_padding">2dp</item>-->
+        <!--<item name="lmd_animDuration">400</item>-->
+        <!--<item name="lmd_interpolator">@android:anim/accelerate_decelerate_interpolator</item>-->
+        <!--<item name="lmd_strokeSize">3dp</item>-->
+        <!--<item name="lmd_strokeColor">#FFFFFFFF</item>-->
+        <!--<item name="lmd_strokeCap">butt</item>-->
+        <!--<item name="lmd_strokeJoin">miter</item>-->
+        <!--<item name="lmd_clockwise">true</item>-->
+    <!--</style>-->
+
+</resources>

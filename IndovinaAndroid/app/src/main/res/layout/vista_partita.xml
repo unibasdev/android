@@ -1,0 +1,99 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      android:layout_width="fill_parent"
+                      android:layout_height="fill_parent"
+                      android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/labelMessaggio1"
+                android:freezesText="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Tentativi effettuati:"
+                    android:id="@+id/labelMessaggio2"
+                    android:freezesText="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Medium Text"
+                    android:id="@+id/labelNumeroTentativi"
+                    android:freezesText="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:textColor="@color/accent_dark"
+                    android:textStyle="bold"
+                    android:textSize="24dp"
+                    android:shadowColor="#747a7a7a"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="4"
+                    />
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/testoTentativo"
+                android:inputType="number"
+                android:hint="@string/suggerimentoTentativo"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView"
+                android:src="@drawable/ic_numberguess"
+                android:layout_gravity="center_horizontal"
+                android:layout_centerHorizontal="true"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.gc.materialdesign.views.ButtonFloatSmall
+        android:id="@+id/bottoneTentativo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/bottone_selezionato"
+        android:layout_gravity="bottom|right"
+        materialdesign:iconDrawable="@drawable/ic_action_forward"/>
+
+
+</RelativeLayout>

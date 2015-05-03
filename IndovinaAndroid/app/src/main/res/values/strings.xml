@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NumberGuess</string>
+    <string name="title_partita">Game</string>
+    <string name="suggerimento_nome">Insert your name...</string>
+    <string name="bottone_inizia">Start the game</string>
+    <string name="nuova_partita">New Game</string>
+    <string name="interrompi_partita">Stop the game</string>
+    <string name="visualizza_record">Show the current record</string>
+    <string name="informazioni">About</string>
+    <string name="tenta">Try</string>
+    <string name="suggerimentoTentativo">Insert your attempt...</string>
+    <string name="messaggio_benvenuto">Hi, %1$s! You need to guess a number between 1 and 100.</string>
+    <string name="messaggio_tentativi">Attempts: %1$d</string>
+    <string name="recordNonStabilito">Record not set yet</string>
+    <string name="ok">OK</string>
+    <string name="attualeRecord">Current record: %1$d attempts</string>
+    <string name="nuovoRecord">You scored a new record!</string>
+    <string name="recordUguagliato">You have matched the current record</string>
+    <string name="numeroIndovinato">Great, %1$s, you got it in %2$d attempts!</string>
+    <string name="numeroNonIndovinato">Sorry, %1$s.\nThe number was %2$d!</string>
+    <string name="suggerimentoIniziale">I just picked up a number between 1 and 100. Try to guess it.</string>
+    <string name="suggerimentoNumeroIndovinato">Number guessed.</string>
+    <string name="suggerimentoAlto">Try with a number higher than %1$d</string>
+    <string name="suggerimentoBasso">Try with a number lower than %1$d</string>
+    <string name="stringaInformazioni">This is a teaching example\nSchool of Computer Science\nUniversity of Basilicata\ngiansalvatore.mecca@unibas.it\ndonatello.santoro@unibas.it</string>
+    <string name="tentativiEffettuati">Attempts so far:</string>
+    <string name="corsoDiLaureaInformatica">School of Computer Science</string>
+    <string name="errore_nome">Please insert your name</string>
+</resources>

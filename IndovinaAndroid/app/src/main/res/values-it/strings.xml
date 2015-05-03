@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Indovina il Numero</string>
+    <string name="title_partita">Partita</string>
+    <string name="suggerimento_nome">Inserisci il tuo nome...</string>
+    <string name="bottone_inizia">Inizia il gioco</string>
+    <string name="nuova_partita">Nuova Partita</string>
+    <string name="interrompi_partita">Interrompi Partita</string>
+    <string name="visualizza_record">Visualizza l\'Attuale Record</string>
+    <string name="informazioni">Informazioni sul Gioco</string>
+    <string name="tenta">Tenta</string>
+    <string name="suggerimentoTentativo">Inserisci il tentativo...</string>
+    <string name="messaggio_benvenuto">Ciao, %1$s! Devi indovinare un numero compreso tra 1 e 100.</string>
+    <string name="messaggio_tentativi">Tentativi effettuati: %1$d</string>
+    <string name="recordNonStabilito">Il record non e\' ancora stato stabilito</string>
+    <string name="ok">OK</string>
+    <string name="attualeRecord">Attuale record: %1$d tentativi</string>
+    <string name="nuovoRecord">Hai stabilito il nuovo record!</string>
+    <string name="recordUguagliato">Hai uguagliato il record precedente</string>
+    <string name="numeroIndovinato">Bravo %1$s, hai indovinato in %2$d tentativi!</string>
+    <string name="numeroNonIndovinato">Peccato %1$s.\nIl numero da indovinare era: %2$d!</string>
+    <string name="suggerimentoIniziale">Ho scelto un numero tra 1 e 100. Prova a indovinarlo.</string>
+    <string name="suggerimentoNumeroIndovinato">Numero indovinato</string>
+    <string name="suggerimentoAlto">Prova con un numero piu\' alto di %1$d</string>
+    <string name="suggerimentoBasso">Prova con un numero piu\' basso di %1$d</string>
+    <string name="stringaInformazioni">Esempio sviluppato a scopo didattico\nCorso di Laurea in Informatica\nUniversità della Basilicata\ngiansalvatore.mecca@unibas.it\ndonatello.santoro@unibas.it</string>
+    <string name="tentativiEffettuati">Tentativi effettuati:</string>
+    <string name="corsoDiLaureaInformatica">Corso di Laurea in Informatica</string>
+    <string name="errore_nome">E\' necessario inserire il nome</string>
+</resources>

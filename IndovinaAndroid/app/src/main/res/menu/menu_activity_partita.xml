@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      tools:context="it.unibas.indovinaandroid.activity.ActivityPartita">
+    <group>
+        <item
+            android:id="@+id/menu_visualizza_record"
+            android:title="@string/visualizza_record"
+            android:icon="@drawable/ic_action_important"
+            app:showAsAction="ifRoom"/>
+        <item
+            android:id="@+id/menu_nuova_partita"
+            android:title="@string/nuova_partita"
+            android:icon="@drawable/ic_action_refresh"
+            app:showAsAction="always"/>
+        <item
+            android:id="@+id/menu_interrompi_partita"
+            android:title="@string/interrompi_partita"
+            android:icon="@drawable/ic_action_remove"
+            app:showAsAction="always"/>
+        <item
+            android:id="@+id/menu_informazioni"
+            android:title="@string/informazioni"
+            app:showAsAction="never"/>
+    </group>
+
+</menu>
