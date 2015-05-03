@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+    <ListPreference
+        android:key="@string/prefVotoMassimoLaurea"
+        android:title="@string/votoMassimoLaurea"
+        android:dialogTitle="@string/votoMassimoLaurea"
+        android:entries="@array/votiMassimoLaurea"
+        android:entryValues="@array/votiMassimoLaurea"
+        android:summary="%s"
+        android:defaultValue="@string/votoLaureaDefault"/>
+    <Preference
+        android:title="@string/informazioni"
+        android:summary="@string/stringaInformazioni"
+        />
+</PreferenceScreen>

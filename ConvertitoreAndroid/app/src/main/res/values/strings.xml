@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Grade Converter</string>
+    <string name="voto30mi">Exam grade</string>
+    <string name="votoLaurea">Graduation grade</string>
+    <string name="convertiIlTuoVoto">Convert your grade</string>
+    <string name="errore">Error in the data</string>
+    <string name="impostazioni">Settings</string>
+    <string name="informazioni">About</string>
+    <string name="converti">Convert</string>
+    <string name="reset">Reset</string>
+    <string name="votoMassimoLaurea">Maximum Graduation Grade</string>
+    <string name="votoLaureaDefault">110</string>
+    <string name="stringaInformazioni">This is a teaching example\nSchool of Computer Science\nUniversity of Basilicata\ngiansalvatore.mecca@unibas.it\ndonatello.santoro@unibas.it</string>
+    <string name="prefVotoMassimoLaurea">prefVotoMassimoLaurea</string>
+    <string name="conversioneEffettuata">Conversion from the scale of %1$d to the scale of %2$d completed.</string>
+    <string name="votoScorretto">Wrong grade value.</string>
+    <string name="valoreVotoScorretto">The grade value must be between %1$d and %2$d.</string>
+    <string name="inserisciIlVoto">Please insert a grade</string>
+</resources>

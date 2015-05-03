@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="colorButtonNormal">@color/bottone_normale</item>
+        <item name="colorControlHighlight">@color/bottone_selezionato</item>
+        <item name="android:buttonStyle">@style/ColoredButton</item>
+    </style>
+
+    <!-- Stile Bottoni -->
+    <style name="ColoredButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <!-- Stile Activity Impostazioni -->
+    <!-- Nella finestra delle impostazioni non c'è la barra perchè AppCompat
+      l'aggiunge solo alle activity che estendono ActionBarActivity
+      mentre le preferenze estendono PreferenceActivity. Per questo la aggiungiamo manualmente -->
+    <style name="SettingsTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/SettingsTheme.ActionBar</item>
+    </style>
+
+    <style name="SettingsTheme.ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/primary</item>
+    </style>
+
+</resources>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Convertitore di Voti</string>
+    <string name="voto30mi">Voto in 30mi</string>
+    <string name="votoLaurea">Voto laurea</string>
+    <string name="convertiIlTuoVoto">Converti il tuo voto</string>
+    <string name="errore">Errore nei Dati</string>
+    <string name="impostazioni">Impostazioni</string>
+    <string name="informazioni">Informazioni</string>
+    <string name="converti">Converti</string>
+    <string name="reset">Reset</string>
+    <string name="votoMassimoLaurea">Voto Massimo Laurea</string>
+    <string name="votoLaureaDefault">110</string>
+    <string name="stringaInformazioni">Esempio sviluppato a scopo didattico\nCorso di Laurea in Informatica\nUniversità della Basilicata\ngiansalvatore.mecca@unibas.it\ndonatello.santoro@unibas.it</string>
+    <string name="prefVotoMassimoLaurea">prefVotoMassimoLaurea</string>
+    <string name="conversioneEffettuata">Conversione da %1$dmi a %2$dmi effettuata.</string>
+    <string name="votoScorretto">Valore scorretto del voto.</string>
+    <string name="valoreVotoScorretto">In voto deve essere compreso tra %1$d e %2$d.</string>
+    <string name="inserisciIlVoto">Inserisci un voto</string>
+</resources>
