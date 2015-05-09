@@ -2,13 +2,14 @@ package it.unibas.mediapesataandroid.modello;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class Studente {
 
     private String nome;
     private String cognome;
     private int matricola;
-    private ArrayList<Esame> listaEsami = new ArrayList<Esame>();
+    private List<Esame> listaEsami = new ArrayList<Esame>();
 
     public Studente() {
         this.nome = "";
@@ -16,7 +17,7 @@ public class Studente {
         this.matricola = 0;
     }
 
-    public Studente (String nome, String cognome, int matricola) {
+    public Studente(String nome, String cognome, int matricola) {
         this.nome = nome;
         this.cognome = cognome;
         this.matricola = matricola;
@@ -42,7 +43,7 @@ public class Studente {
         return this.matricola;
     }
 
-    public void setMatricola(int matricola){
+    public void setMatricola(int matricola) {
         this.matricola = matricola;
     }
 
@@ -95,11 +96,11 @@ public class Studente {
             sommaVotiPesati += esame.getVoto() * esame.getCrediti();
             sommaCrediti += esame.getCrediti();
         }
-        return ((double)sommaVotiPesati)/sommaCrediti;
+        return ((double) sommaVotiPesati) / sommaCrediti;
     }
 
     public double getMedia110mi() {
-        return getMedia30mi()/30 * 110;
+        return getMedia30mi() / 30 * 110;
     }
 
     @Override
