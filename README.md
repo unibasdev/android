@@ -16,3 +16,8 @@ A "Rock, Paper, Scissors" game for Android. Play with rocks, papers and scissors
 ## Weighted Average
 Compute the weighted average grade of your university exams.
 
+
+### Credits
+
+Developed by
+Donatello Santoro and Giansalvatore Mecca
