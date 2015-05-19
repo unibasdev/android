@@ -2,7 +2,7 @@
 
 These apps have been developed for teaching purposes. They are used in our courses at the School of Computer Science at University of Basilicata as a teaching example for the "[Mobile Computing](http://www.informatica.unibas.it/moodle)" course.
 
-[![link](https://developer.android.com/images/brand/en_generic_rgb_wo_45.png)](https://play.google.com/store/search?q=pub:Computer+Science+School+-+University+of+Basilicata)
+[![link](https://developer.android.com/images/brand/en_generic_rgb_wo_45.png)](https://play.google.com/store/search?q=pub:School+of+Computer+Science+-+Univ.+of+Basilicata)
 
 ## Converter
 A simple converter of university grades (for italian grades in the scale of 18-30, 66-110).
@@ -16,8 +16,3 @@ A "Rock, Paper, Scissors" game for Android. Play with rocks, papers and scissors
 ## Weighted Average
 Compute the weighted average grade of your university exams.
 
-
-### Credits
-
-Developed by
-Giansalvatore Mecca and Donatello Santoro
