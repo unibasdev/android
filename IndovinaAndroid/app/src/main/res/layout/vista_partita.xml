@@ -82,18 +82,23 @@
         </LinearLayout>
     </ScrollView>
 
-    <com.gc.materialdesign.views.ButtonFloatSmall
+    <android.support.design.widget.FloatingActionButton
         android:id="@+id/bottoneTentativo"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="8dp"
         android:layout_marginBottom="15dp"
-        android:background="@color/bottone_selezionato"
-        android:layout_gravity="bottom|right"
-        materialdesign:iconDrawable="@drawable/ic_action_forward"/>
+        android:layout_marginRight="15dp"
+        android:elevation="4dp"
+        android:src="@drawable/ic_action_forward"
+        app:borderWidth="0dp"
+        app:elevation="4dp"
+        app:fabSize="mini"/>
 
 
 </RelativeLayout>

@@ -3,14 +3,13 @@ package it.unibas.indovinaandroid.vista;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import com.gc.materialdesign.views.ButtonFloatSmall;
 
 import it.unibas.indovinaandroid.Applicazione;
 import it.unibas.indovinaandroid.Costanti;
@@ -27,7 +26,7 @@ public class VistaPartita extends Fragment {
     private TextView labelMessaggio1;
     private TextView labelMessaggio2;
     private TextView labelNumeroTentativi;
-    private ButtonFloatSmall bottoneTentativo;
+    private FloatingActionButton bottoneTentativo;
     private int durataAnimazione;
 
     @Override
@@ -38,8 +37,7 @@ public class VistaPartita extends Fragment {
         labelMessaggio1 = (TextView) vista.findViewById(R.id.labelMessaggio1);
         labelMessaggio2 = (TextView) vista.findViewById(R.id.labelMessaggio2);
         labelNumeroTentativi = (TextView) vista.findViewById(R.id.labelNumeroTentativi);
-        bottoneTentativo = (ButtonFloatSmall) vista.findViewById(R.id.bottoneTentativo);
-        bottoneTentativo.setBackgroundColor(getResources().getColor(R.color.accent));
+        bottoneTentativo = (FloatingActionButton) vista.findViewById(R.id.bottoneTentativo);
         inizializzaAzioni();
         schermoNuovaPartita();
 //        durataAnimazione = getResources().getInteger(android.R.integer.config_shortAnimTime);

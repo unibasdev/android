@@ -1,6 +1,7 @@
 package it.unibas.mediapesataandroid.vista;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.gc.materialdesign.views.ButtonFloat;
 
 import java.text.DecimalFormat;
 
@@ -28,7 +28,7 @@ public class VistaEsami extends Fragment {
     private TextView testoMediaVoto30mi;
     private TextView testaMediaVoto110mi;
     private ListView listaEsami;
-    private ButtonFloat bottoneAggiungiEsame;
+    private FloatingActionButton bottoneAggiungiEsame;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -38,8 +38,7 @@ public class VistaEsami extends Fragment {
         testoMediaVoto30mi = (TextView) vista.findViewById(R.id.testoMediaVoto30mi);
         testaMediaVoto110mi = (TextView) vista.findViewById(R.id.testaMediaVoto110mi);
         listaEsami = (ListView) vista.findViewById(R.id.listaEsami);
-        bottoneAggiungiEsame = (ButtonFloat) vista.findViewById(R.id.bottoneAggiungiEsame);
-        bottoneAggiungiEsame.setBackgroundColor(getResources().getColor(R.color.accent));
+        bottoneAggiungiEsame = (FloatingActionButton) vista.findViewById(R.id.bottoneAggiungiEsame);
         bottoneAggiungiEsame.setOnClickListener(Applicazione.getInstance().getControlloPrincipale().getAzioneInserisciEsame());
         listaEsami.setOnItemClickListener(Applicazione.getInstance().getControlloPrincipale().getAzioneSelezionaEsame());
         listaEsami.setOnItemLongClickListener(Applicazione.getInstance().getControlloPrincipale().getAzioneMostraOperazioniEsame());

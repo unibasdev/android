@@ -23,7 +23,7 @@
     <string name="suggerimentoNumeroIndovinato">Number guessed.</string>
     <string name="suggerimentoAlto">Try with a number higher than %1$d</string>
     <string name="suggerimentoBasso">Try with a number lower than %1$d</string>
-    <string name="stringaInformazioni">This is a teaching example\nSchool of Computer Science\nUniversity of Basilicata\ngiansalvatore.mecca@unibas.it\ndonatello.santoro@unibas.it</string>
+    <string name="stringaInformazioni">This is a teaching example\nSchool of Computer Science\nUniversity of Basilicata\ndonatello.santoro@unibas.it\ngiansalvatore.mecca@unibas.it</string>
     <string name="tentativiEffettuati">Attempts so far:</string>
     <string name="corsoDiLaureaInformatica">School of Computer Science</string>
     <string name="errore_nome">Please insert your name</string>

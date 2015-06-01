@@ -7,7 +7,7 @@
     <string name="StringaFile">File</string>
     <string name="StringaMenuModifica">Modifica</string>
     <string name="StringaErrore">Errore</string>
-    <string name="StringaMessaggioInformazioni">Esempio sviluppato a scopo didattico\n\nCorso di Laurea in Informatica\nUniversita\' della Basilicata\ngiansalvatore.mecca@unibas.it\ndonatello.santoro@unibas.it</string>
+    <string name="StringaMessaggioInformazioni">Esempio sviluppato a scopo didattico\n\nCorso di Laurea in Informatica\nUniversita\' della Basilicata\ndonatello.santoro@unibas.it\ngiansalvatore.mecca@unibas.it</string>
     <string name="StringaCognome">Cognome</string>
     <string name="StringaNome">Nome</string>
     <string name="StringaMatricola">Matricola</string>

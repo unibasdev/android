@@ -1,80 +1,84 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+                xmlns:app="ttp://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/testoListaEsami"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/StringaListaEsami"
-            android:id="@+id/testoListaEsami"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:textStyle="bold"
-            android:textColor="@color/accent"/>
+            android:text="@string/StringaListaEsami"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/accent"
+            android:textStyle="bold"/>
 
         <ListView
+            android:id="@+id/listaEsami"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.7"
-            android:id="@+id/listaEsami"
             android:choiceMode="singleChoice"/>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true">
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/StringaCreditiTotali"
                 android:id="@+id/testoCreditiTotali"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"/>
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/StringaMedia30mi"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/StringaCreditiTotali"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+            <TextView
                 android:id="@+id/testoMediaVoto30mi"
-                android:layout_marginLeft="10dp"/>
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/StringaMedia110mi"
-                android:id="@+id/testaMediaVoto110mi"
                 android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"/>
+                android:text="@string/StringaMedia30mi"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+            <TextView
+                android:id="@+id/testaMediaVoto110mi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/StringaMedia110mi"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
         </LinearLayout>
     </LinearLayout>
 
-    <com.gc.materialdesign.views.ButtonFloat
+    <android.support.design.widget.FloatingActionButton
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/bottoneAggiungiEsame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="8dp"
         android:layout_marginBottom="15dp"
-        android:background="@color/bottone_selezionato"
-        android:layout_gravity="bottom|right"
-        materialdesign:iconDrawable="@drawable/ic_add_white_24dp"/>
+        android:layout_marginRight="15dp"
+        android:elevation="4dp"
+        android:src="@drawable/ic_add_white_24dp"
+        app:borderWidth="0dp"
+        app:elevation="4dp"/>
 
 
 </RelativeLayout>

@@ -23,7 +23,7 @@
     <string name="suggerimentoNumeroIndovinato">Numero indovinato</string>
     <string name="suggerimentoAlto">Prova con un numero piu\' alto di %1$d</string>
     <string name="suggerimentoBasso">Prova con un numero piu\' basso di %1$d</string>
-    <string name="stringaInformazioni">Esempio sviluppato a scopo didattico\nCorso di Laurea in Informatica\nUniversità della Basilicata\ngiansalvatore.mecca@unibas.it\ndonatello.santoro@unibas.it</string>
+    <string name="stringaInformazioni">Esempio sviluppato a scopo didattico\nCorso di Laurea in Informatica\nUniversità della Basilicata\ndonatello.santoro@unibas.it\ngiansalvatore.mecca@unibas.it</string>
     <string name="tentativiEffettuati">Tentativi effettuati:</string>
     <string name="corsoDiLaureaInformatica">Corso di Laurea in Informatica</string>
     <string name="errore_nome">E\' necessario inserire il nome</string>
