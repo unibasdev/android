@@ -1,7 +1,7 @@
 package it.unibas.mediapesataandroid.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -10,7 +10,7 @@ import it.unibas.mediapesataandroid.Applicazione;
 import it.unibas.mediapesataandroid.R;
 import it.unibas.mediapesataandroid.vista.VistaFormStudente;
 
-public class ActivityFormStudente extends ActionBarActivity {
+public class ActivityFormStudente extends AppCompatActivity {
 
     public static final String TAG = "ActivityFormStudente";
     private MenuItem menuItemOK;
@@ -20,17 +20,10 @@ public class ActivityFormStudente extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_form_studente);
-        if (savedInstanceState != null) {
-            return;
-        }
-        getSupportFragmentManager()
-                .beginTransaction()
-                .add(R.id.containerVistaFormStudente, new VistaFormStudente())
-                .commit();
     }
 
     public VistaFormStudente getVistaFormStudente() {
-        return (VistaFormStudente) this.getSupportFragmentManager().findFragmentById(R.id.containerVistaFormStudente);
+        return (VistaFormStudente) this.getSupportFragmentManager().findFragmentById(R.id.vistaFormStudente);
     }
     ////////////////////////// MENU ////////////////////////////
 

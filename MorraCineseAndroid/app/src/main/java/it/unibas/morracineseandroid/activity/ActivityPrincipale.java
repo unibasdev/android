@@ -2,7 +2,7 @@ package it.unibas.morracineseandroid.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 
@@ -10,7 +10,7 @@ import it.unibas.morracineseandroid.Applicazione;
 import it.unibas.morracineseandroid.R;
 import it.unibas.morracineseandroid.vista.VistaPrincipale;
 
-public class ActivityPrincipale extends ActionBarActivity {
+public class ActivityPrincipale extends AppCompatActivity {
 
     public static final String TAG = ActivityPrincipale.class.getSimpleName();
 

@@ -5,7 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -19,7 +19,7 @@ import it.unibas.mediapesataandroid.modello.Studente;
 import it.unibas.mediapesataandroid.vista.VistaEsami;
 import it.unibas.mediapesataandroid.vista.VistaStudente;
 
-public class ActivityPrincipale extends ActionBarActivity {
+public class ActivityPrincipale extends AppCompatActivity {
 
     public static final String TAG = "ActivityPrincipale";
 
@@ -27,9 +27,6 @@ public class ActivityPrincipale extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_principale);
-        if (savedInstanceState != null) {
-            return;
-        }
         this.azioneIniziale();
     }
 

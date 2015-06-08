@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
-
 import java.text.DecimalFormat;
 
 import it.unibas.mediapesataandroid.Applicazione;

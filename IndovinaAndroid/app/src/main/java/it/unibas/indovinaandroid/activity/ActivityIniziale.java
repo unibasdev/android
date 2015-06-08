@@ -3,14 +3,14 @@ package it.unibas.indovinaandroid.activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import it.unibas.indovinaandroid.Applicazione;
 import it.unibas.indovinaandroid.R;
 import it.unibas.indovinaandroid.vista.VistaIniziale;
 
-public class ActivityIniziale extends ActionBarActivity {
+public class ActivityIniziale extends AppCompatActivity {
 
     public static final String TAG = ActivityIniziale.class.getSimpleName();
 

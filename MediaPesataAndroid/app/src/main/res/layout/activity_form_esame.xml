@@ -1,4 +1,10 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:id="@+id/containerVistaFormEsame"
              android:layout_width="match_parent"
-             android:layout_height="match_parent"/>
+             android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/vistaFormEsame"
+        android:name="it.unibas.mediapesataandroid.vista.VistaFormEsame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</FrameLayout>
