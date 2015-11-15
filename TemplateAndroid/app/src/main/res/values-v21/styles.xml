@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:colorButtonNormal">@color/bottone</item>
+        <item name="android:colorControlHighlight">@color/bottone_selezionato</item>
+        <item name="android:buttonStyle">@style/ColoredButton</item>
+    </style>
+
+    <!-- Stile Bottoni -->
+    <style name="ColoredButton" parent="android:style/Widget.Material.Button">
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <!-- Settings activity theme. -->
+    <style name="SettingsTheme" parent="@android:style/Theme.Material.Light.DarkActionBar">
+        <item name="android:colorPrimary">@color/primary</item>
+        <item name="android:colorPrimaryDark">@color/primary_dark</item>
+    </style>
+
+</resources>
