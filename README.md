@@ -2,7 +2,7 @@
 
 These apps have been developed for teaching purposes. They are used in our courses at the School of Computer Science at University of Basilicata as a teaching example for the "[Mobile Computing](http://www.informatica.unibas.it/moodle)" course.
 
-[![link](https://developer.android.com/images/brand/en_generic_rgb_wo_45.png)](https://play.google.com/store/search?q=pub:School+of+Computer+Science+-+Univ.+of+Basilicata)
+[![link](https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png =150x)](https://play.google.com/store/search?q=pub:School+of+Computer+Science+-+Univ.+of+Basilicata)
 
 ## Converter
 A simple converter of university grades (for italian grades in the scale of 18-30, 66-110).
