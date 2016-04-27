@@ -25,5 +25,4 @@ proguard/
 
 # Log Files
 *.log
-MediaPesataAndroid/.idea/dictionaries
-MorraCineseAndroid/.idea/dictionaries
+*/.idea

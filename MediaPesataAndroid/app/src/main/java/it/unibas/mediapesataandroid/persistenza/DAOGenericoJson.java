@@ -27,7 +27,6 @@ public class DAOGenericoJson {
 
     private static String TAG = "DAOGenerico";
     private String datePatternFormat = "dd-MM-yyyy HH:mm:ss";
-    private String timeZone = null;
 
     /* ******************************************
      *               Conversione
@@ -112,13 +111,5 @@ public class DAOGenericoJson {
 
     public void setDatePatternFormat(String datePatternFormat) {
         this.datePatternFormat = datePatternFormat;
-    }
-
-    public String getTimeZone() {
-        return timeZone;
-    }
-
-    public void setTimeZone(String timeZone) {
-        this.timeZone = timeZone;
     }
 }
