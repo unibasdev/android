@@ -9,30 +9,29 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import it.unibas.mediapesataandroid.Applicazione;
-import it.unibas.mediapesataandroid.Costanti;
 import it.unibas.mediapesataandroid.R;
 
 public class ModelloListaEsami extends BaseAdapter {
 
     public final static String TAG = ModelloListaEsami.class.getName();
 
-    private Studente getStudente() {
-        ModelloPersistente modello = Applicazione.getInstance().getModello();
-        Studente studente = (Studente) modello.getPersistentBean(Costanti.STUDENTE, Studente.class);
-        return studente;
+    private Studente studente;
+
+    public ModelloListaEsami(Studente studente){
+        this.studente = studente;
     }
 
     @Override
     public int getCount() {
-        if (getStudente() == null) {
+        if (studente == null) {
             return 0;
         }
-        return this.getStudente().getNumeroEsami();
+        return studente.getNumeroEsami();
     }
 
     @Override
     public Object getItem(int posizione) {
-        return this.getStudente().getEsame(posizione);
+        return studente.getEsame(posizione);
     }
 
     @Override
@@ -51,7 +50,7 @@ public class ModelloListaEsami extends BaseAdapter {
             //Riutilizzo la view
             riga = viewRiciclabile;
         }
-        Esame esame = this.getStudente().getEsame(posizione);
+        Esame esame = studente.getEsame(posizione);
         Log.d(TAG, "Mostro esame " + esame.toString());
         TextView labelInsegnamento = (TextView) riga.findViewById(R.id.rigaTestoInsegnamento);
         labelInsegnamento.setText(esame.getInsegnamento());

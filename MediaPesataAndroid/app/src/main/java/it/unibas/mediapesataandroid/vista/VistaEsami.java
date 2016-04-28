@@ -54,8 +54,10 @@ public class VistaEsami extends Fragment {
     ////////////////////////// SCHERMI ////////////////////////////
 
     public void aggiornaVista() {
+        ModelloPersistente modello = Applicazione.getInstance().getModello();
+        Studente studente = (Studente) modello.getPersistentBean(Costanti.STUDENTE, Studente.class);
+        this.listaEsami.setAdapter(new ModelloListaEsami(studente));
 //        this.listaEsami.setAdapter(new ArrayAdapter<Esame>(getActivity(), R.layout.riga_esami, R.id.rigaTestoInsegnamento, studente.getListaEsami()));
-        this.listaEsami.setAdapter(new ModelloListaEsami());
     }
 
     public void aggiornaEsami() {
