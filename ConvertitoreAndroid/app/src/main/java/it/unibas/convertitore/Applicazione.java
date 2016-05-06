@@ -20,6 +20,7 @@ public class Applicazione extends Application {
         return singleton;
     }
 
+    @Override
     public void onCreate() {
         Log.d(TAG, "Applicazione creata...");
         singleton = (Applicazione) getApplicationContext();
