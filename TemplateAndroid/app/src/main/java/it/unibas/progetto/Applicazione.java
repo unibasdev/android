@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import it.unibas.progetto.modello.Modello;
+import it.unibas.progetto.modello.ModelloPersistente;
 
 public class Applicazione extends Application {
 
@@ -18,6 +19,7 @@ public class Applicazione extends Application {
     }
 
     public void onCreate() {
+        super.onCreate();
         Log.d(TAG, "Applicazione creata...");
         singleton = (Applicazione) getApplicationContext();
         singleton.registerActivityLifecycleCallbacks(new GestoreAttivita());
@@ -28,6 +30,7 @@ public class Applicazione extends Application {
     private Activity currentActivity = null;
 
     private Modello modello = new Modello();
+    private ModelloPersistente modelloPersistente = new ModelloPersistente();
 
     public Activity getCurrentActivity() {
         return this.currentActivity;
@@ -35,6 +38,10 @@ public class Applicazione extends Application {
 
     public Modello getModello() {
         return modello;
+    }
+
+    public ModelloPersistente getModelloPersistente() {
+        return modelloPersistente;
     }
 
     //////////////////////////////////////////////
