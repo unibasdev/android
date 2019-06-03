@@ -21,6 +21,7 @@ public class Applicazione extends Application {
 
     @Override
     public void onCreate() {
+        super.onCreate();
         Log.d(TAG, "*** Creata Applicazione");
         singleton = (Applicazione) getApplicationContext();
         singleton.registerActivityLifecycleCallbacks(new GestoreAttivita());

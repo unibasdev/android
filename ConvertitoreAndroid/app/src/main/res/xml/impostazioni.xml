@@ -3,13 +3,14 @@
                   android:layout_width="match_parent"
                   android:layout_height="match_parent">
     <ListPreference
-        android:key="@string/prefVotoMassimoLaurea"
+        android:key="prefVotoMassimoLaurea"
         android:title="@string/votoMassimoLaurea"
         android:dialogTitle="@string/votoMassimoLaurea"
         android:entries="@array/votiMassimoLaurea"
         android:entryValues="@array/votiMassimoLaurea"
         android:summary="%s"
         android:defaultValue="@string/votoLaureaDefault"/>
+
     <Preference
         android:title="@string/informazioni"
         android:summary="@string/stringaInformazioni"

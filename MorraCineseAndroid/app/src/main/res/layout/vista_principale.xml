@@ -187,10 +187,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageViewGiocataComputer"
-            android:layout_alignBottom="@+id/imageViewGiocataGiocatore"
-            android:layout_alignRight="@+id/labelPartiteVinteGiocatore"
             android:src="@drawable/forbici2"
-            android:contentDescription="@string/giocataComputer"/>
+            android:contentDescription="@string/giocataComputer"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
 
         <TextView
             android:layout_width="wrap_content"

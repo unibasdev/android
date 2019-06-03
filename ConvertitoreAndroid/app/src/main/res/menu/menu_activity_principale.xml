@@ -3,7 +3,7 @@
     <item
         android:id="@+id/menu_impostazioni"
         android:title="@string/impostazioni"
-        android:orderInCategory="100"
-        app:showAsAction="never"/>
+        app:showAsAction="never"
+        />
 
 </menu>
