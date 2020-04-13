@@ -9,6 +9,7 @@ import it.unibas.indovinaandroid.R;
 public class ActivityImpostazioni extends PreferenceActivity {
 
     @Override
+    @SuppressWarnings("deprecation")
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.impostazioni);

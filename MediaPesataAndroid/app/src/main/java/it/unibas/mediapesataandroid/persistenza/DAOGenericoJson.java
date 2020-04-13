@@ -23,6 +23,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+@SuppressWarnings("unchecked")
 public class DAOGenericoJson {
 
     private static String TAG = "DAOGenerico";

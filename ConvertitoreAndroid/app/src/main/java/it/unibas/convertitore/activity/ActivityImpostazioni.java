@@ -9,6 +9,7 @@ import it.unibas.convertitore.R;
 public class ActivityImpostazioni extends PreferenceActivity {
 
     @Override
+    @SuppressWarnings("deprecation")
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         PreferenceManager.setDefaultValues(getBaseContext(), R.xml.impostazioni, false);
