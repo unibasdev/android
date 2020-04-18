@@ -21,6 +21,10 @@ public class ModelloListaEsami extends BaseAdapter {
         this.studente = studente;
     }
 
+    public void setStudente(Studente studente) {
+        this.studente = studente;
+    }
+
     @Override
     public int getCount() {
         if (studente == null) {

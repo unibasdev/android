@@ -83,6 +83,7 @@ public class VistaEsami extends Fragment {
     private void aggiornaListaEsami(Studente studente) {
         Log.d(TAG, studente.toString());
         ModelloListaEsami adapter = (ModelloListaEsami) this.listaEsami.getAdapter();
+        adapter.setStudente(studente);
         adapter.updateContent();
     }
 }
