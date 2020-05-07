@@ -2,9 +2,10 @@ package it.unibas.morracineseandroid.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import it.unibas.morracineseandroid.Applicazione;
 import it.unibas.morracineseandroid.R;
