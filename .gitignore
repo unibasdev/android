@@ -28,3 +28,7 @@ proguard/
 *.log
 */.idea
 Thumbs.db
+
+# Android Studio
+*.iml
+.idea
