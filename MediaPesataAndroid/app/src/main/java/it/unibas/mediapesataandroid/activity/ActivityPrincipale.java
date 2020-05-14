@@ -62,9 +62,9 @@ public class ActivityPrincipale extends AppCompatActivity {
         MenuItem menuEsporta = menu.findItem(R.id.menu_esporta);
         menuEsporta.setOnMenuItemClickListener(Applicazione.getInstance().getControlloMenu().getAzioneScegliFileEsporta());
         MenuItem menuImportaExternalStorage = menu.findItem(R.id.menu_importa_external_storage);
-        menuImportaExternalStorage.setOnMenuItemClickListener(Applicazione.getInstance().getControlloMenu().getAzioneScegliFileImportaExternalStorage());
+        menuImportaExternalStorage.setOnMenuItemClickListener(Applicazione.getInstance().getControlloMenu().getAzioneImportaExternalStorage());
         MenuItem menuEsportaExternalStorage = menu.findItem(R.id.menu_esporta_external_storage);
-        menuEsportaExternalStorage.setOnMenuItemClickListener(Applicazione.getInstance().getControlloMenu().getAzioneScegliFileEsportaExternalStorage());
+        menuEsportaExternalStorage.setOnMenuItemClickListener(Applicazione.getInstance().getControlloMenu().getAzioneEsportaExternalStorage());
         MenuItem menuItemInformazioni = menu.findItem(R.id.menu_informazioni);
         menuItemInformazioni.setOnMenuItemClickListener(Applicazione.getInstance().getControlloMenu().getAzioneInformazioni());
         return true;

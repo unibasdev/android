@@ -29,8 +29,8 @@ public class ControlloMenu {
     private final MenuItem.OnMenuItemClickListener azioneModificaDatiStudente = new AzioneModificaDatiStudente();
     private final MenuItem.OnMenuItemClickListener azioneScegliFileImporta = new AzioneScegliFileImporta();
     private final MenuItem.OnMenuItemClickListener azioneScegliFileEsporta = new AzioneScegliFileEsporta();
-    private final MenuItem.OnMenuItemClickListener azioneScegliFileImportaExternalStorage = new AzioneScegliFileImportaExternalStorage();
-    private final MenuItem.OnMenuItemClickListener azioneScegliFileEsportaExternalStorage = new AzioneScegliFileEsportaExternalStorage();
+    private final MenuItem.OnMenuItemClickListener azioneImportaExternalStorage = new AzioneImportaExternalStorage();
+    private final MenuItem.OnMenuItemClickListener azioneEsportaExternalStorage = new AzioneEsportaExternalStorage();
 
     public MenuItem.OnMenuItemClickListener getAzioneModificaDatiStudente() {
         return azioneModificaDatiStudente;
@@ -44,12 +44,12 @@ public class ControlloMenu {
         return azioneScegliFileEsporta;
     }
 
-    public MenuItem.OnMenuItemClickListener getAzioneScegliFileImportaExternalStorage() {
-        return azioneScegliFileImportaExternalStorage;
+    public MenuItem.OnMenuItemClickListener getAzioneImportaExternalStorage() {
+        return azioneImportaExternalStorage;
     }
 
-    public MenuItem.OnMenuItemClickListener getAzioneScegliFileEsportaExternalStorage() {
-        return azioneScegliFileEsportaExternalStorage;
+    public MenuItem.OnMenuItemClickListener getAzioneEsportaExternalStorage() {
+        return azioneEsportaExternalStorage;
     }
 
     public MenuItem.OnMenuItemClickListener getAzioneInformazioni() {
@@ -159,7 +159,7 @@ public class ControlloMenu {
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
-    private class AzioneScegliFileImportaExternalStorage implements MenuItem.OnMenuItemClickListener {
+    private class AzioneImportaExternalStorage implements MenuItem.OnMenuItemClickListener {
 
         public final String TAG = AzioneScegliFileImporta.class.getSimpleName();
 
@@ -191,7 +191,7 @@ public class ControlloMenu {
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
-    private class AzioneScegliFileEsportaExternalStorage implements MenuItem.OnMenuItemClickListener {
+    private class AzioneEsportaExternalStorage implements MenuItem.OnMenuItemClickListener {
 
         public final String TAG = AzioneScegliFileEsporta.class.getSimpleName();
 
