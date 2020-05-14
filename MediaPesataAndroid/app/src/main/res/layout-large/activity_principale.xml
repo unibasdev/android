@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:baselineAligned="false"
               android:orientation="vertical">
@@ -8,13 +9,15 @@
         android:name="it.unibas.mediapesataandroid.vista.VistaStudente"
         android:id="@+id/vistaStudente"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        tools:layout="@layout/vista_studente" />
 
     <fragment
         android:name="it.unibas.mediapesataandroid.vista.VistaEsami"
         android:id="@+id/vistaEsami"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        tools:layout="@layout/vista_esami" />
 
 </LinearLayout>

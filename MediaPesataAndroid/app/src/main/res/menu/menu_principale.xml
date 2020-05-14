@@ -15,6 +15,14 @@
         android:title="@string/StringaEsporta"
         app:showAsAction="never"/>
     <item
+        android:id="@+id/menu_importa_external_storage"
+        android:title="@string/StringaImportaExternalStorage"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_esporta_external_storage"
+        android:title="@string/StringaEsportaExternalStorage"
+        app:showAsAction="never"/>
+    <item
         android:id="@+id/menu_informazioni"
         android:title="@string/StringaInformazioni"
         android:orderInCategory="100"

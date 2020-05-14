@@ -36,6 +36,8 @@
     <string name="StringaNuovoStudente">New Student</string>
     <string name="StringaImporta">Import</string>
     <string name="StringaEsporta">Export</string>
+    <string name="StringaImportaExternalStorage">Import from External Storage</string>
+    <string name="StringaEsportaExternalStorage">Expor from External Storaget</string>
     <string name="StringaEsci">Exit</string>
     <string name="StringaInformazioni">About this Application</string>
     <string name="StringaTabellaEsami">Table of Exams</string>
@@ -80,4 +82,7 @@
     <string name="StringaVuoiEliminareEsame">Do you really want to delete this exam?</string>
     <string name="StringaSelezionaFile">File name</string>
     <string name="StringaInstallareFileManager">Please install a File Manager.</string>
+    <string name="StringaImportSuccesso">Import Successfully</string>
+    <string name="StringaExportSuccesso">Export Successfully</string>
+    <string name="StringaPermessoNegato">Check your permission</string>
 </resources>

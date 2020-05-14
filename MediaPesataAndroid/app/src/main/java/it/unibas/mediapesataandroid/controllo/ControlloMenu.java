@@ -1,10 +1,18 @@
 package it.unibas.mediapesataandroid.controllo;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Environment;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -21,6 +29,8 @@ public class ControlloMenu {
     private final MenuItem.OnMenuItemClickListener azioneModificaDatiStudente = new AzioneModificaDatiStudente();
     private final MenuItem.OnMenuItemClickListener azioneScegliFileImporta = new AzioneScegliFileImporta();
     private final MenuItem.OnMenuItemClickListener azioneScegliFileEsporta = new AzioneScegliFileEsporta();
+    private final MenuItem.OnMenuItemClickListener azioneScegliFileImportaExternalStorage = new AzioneScegliFileImportaExternalStorage();
+    private final MenuItem.OnMenuItemClickListener azioneScegliFileEsportaExternalStorage = new AzioneScegliFileEsportaExternalStorage();
 
     public MenuItem.OnMenuItemClickListener getAzioneModificaDatiStudente() {
         return azioneModificaDatiStudente;
@@ -32,6 +42,14 @@ public class ControlloMenu {
 
     public MenuItem.OnMenuItemClickListener getAzioneScegliFileEsporta() {
         return azioneScegliFileEsporta;
+    }
+
+    public MenuItem.OnMenuItemClickListener getAzioneScegliFileImportaExternalStorage() {
+        return azioneScegliFileImportaExternalStorage;
+    }
+
+    public MenuItem.OnMenuItemClickListener getAzioneScegliFileEsportaExternalStorage() {
+        return azioneScegliFileEsportaExternalStorage;
     }
 
     public MenuItem.OnMenuItemClickListener getAzioneInformazioni() {
@@ -124,7 +142,7 @@ public class ControlloMenu {
             Studente studente = (Studente) Applicazione.getInstance().getDaoStudente().carica(is, Studente.class);
             Applicazione.getInstance().getModello().saveBean(Costanti.STUDENTE, studente);
         } catch (Exception e) {
-            Log.e("Azione importa", "Impossibile importare lo studente", e);
+            Log.e("Azione importa", "Impossibile esportare lo studente", e);
             e.printStackTrace();
             String errore = Applicazione.getInstance().getString(R.string.StringaImpossibileCaricare) + ".\n" + e.getLocalizedMessage();
             Toast.makeText(Applicazione.getInstance(), errore, Toast.LENGTH_LONG).show();
@@ -137,6 +155,70 @@ public class ControlloMenu {
                 } catch (IOException e) {
                 }
             }
+        }
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////
+    private class AzioneScegliFileImportaExternalStorage implements MenuItem.OnMenuItemClickListener {
+
+        public final String TAG = AzioneScegliFileImporta.class.getSimpleName();
+
+        @Override
+        public boolean onMenuItemClick(MenuItem item) {
+            if (ContextCompat.checkSelfPermission(Applicazione.getInstance().getCurrentActivity(),
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)   != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(Applicazione.getInstance().getCurrentActivity(),
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},Costanti.RICHIESTA_PERMESSO_IMPORT);
+            }else {
+                importaExternalStorage();
+            }
+            return true;
+        }
+    }
+
+    public void importaExternalStorage(){
+        try {
+            String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/studente_export.json";
+            Studente studente = (Studente) Applicazione.getInstance().getDaoStudente().carica(new FileInputStream(path), Studente.class);
+            Applicazione.getInstance().getModello().saveBean(Costanti.STUDENTE, studente);
+            Toast.makeText(Applicazione.getInstance(), R.string.StringaImportSuccesso, Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            Log.e("Azione importa", "Impossibile esportare lo studente", e);
+            e.printStackTrace();
+            String errore = Applicazione.getInstance().getString(R.string.StringaImpossibileSalvare) + ".\n" + e.getLocalizedMessage();
+            Toast.makeText(Applicazione.getInstance(), errore, Toast.LENGTH_LONG).show();
+        }
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////
+    private class AzioneScegliFileEsportaExternalStorage implements MenuItem.OnMenuItemClickListener {
+
+        public final String TAG = AzioneScegliFileEsporta.class.getSimpleName();
+
+        @Override
+        public boolean onMenuItemClick(MenuItem item) {
+            if (ContextCompat.checkSelfPermission(Applicazione.getInstance().getCurrentActivity(),
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)   != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(Applicazione.getInstance().getCurrentActivity(),
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},Costanti.RICHIESTA_PERMESSO_EXPORT);
+            }else {
+                esportaExternalStorage();
+            }
+            return true;
+        }
+    }
+
+    public void esportaExternalStorage(){
+        try {
+            Studente studente = (Studente) Applicazione.getInstance().getModello().getPersistentBean(Costanti.STUDENTE, Studente.class);
+            String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/studente_export.json";
+            Applicazione.getInstance().getDaoStudente().salva(studente, new FileOutputStream(path));
+            Toast.makeText(Applicazione.getInstance(), R.string.StringaExportSuccesso, Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            Log.e("Azione importa", "Impossibile esportare lo studente", e);
+            e.printStackTrace();
+            String errore = Applicazione.getInstance().getString(R.string.StringaImpossibileSalvare) + ".\n" + e.getLocalizedMessage();
+            Toast.makeText(Applicazione.getInstance(), errore, Toast.LENGTH_LONG).show();
         }
     }
 }

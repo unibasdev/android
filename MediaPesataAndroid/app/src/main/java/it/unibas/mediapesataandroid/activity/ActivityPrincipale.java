@@ -3,13 +3,15 @@ package it.unibas.mediapesataandroid.activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import it.unibas.mediapesataandroid.Applicazione;
 import it.unibas.mediapesataandroid.Costanti;
@@ -59,9 +61,29 @@ public class ActivityPrincipale extends AppCompatActivity {
         menuImporta.setOnMenuItemClickListener(Applicazione.getInstance().getControlloMenu().getAzioneScegliFileImporta());
         MenuItem menuEsporta = menu.findItem(R.id.menu_esporta);
         menuEsporta.setOnMenuItemClickListener(Applicazione.getInstance().getControlloMenu().getAzioneScegliFileEsporta());
+        MenuItem menuImportaExternalStorage = menu.findItem(R.id.menu_importa_external_storage);
+        menuImportaExternalStorage.setOnMenuItemClickListener(Applicazione.getInstance().getControlloMenu().getAzioneScegliFileImportaExternalStorage());
+        MenuItem menuEsportaExternalStorage = menu.findItem(R.id.menu_esporta_external_storage);
+        menuEsportaExternalStorage.setOnMenuItemClickListener(Applicazione.getInstance().getControlloMenu().getAzioneScegliFileEsportaExternalStorage());
         MenuItem menuItemInformazioni = menu.findItem(R.id.menu_informazioni);
         menuItemInformazioni.setOnMenuItemClickListener(Applicazione.getInstance().getControlloMenu().getAzioneInformazioni());
         return true;
+    }
+
+    ////////////////////////// CALLBACK PERMESSI ////////////////////////
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        if (grantResults.length > 0  && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if(requestCode == Costanti.RICHIESTA_PERMESSO_IMPORT){
+                Applicazione.getInstance().getControlloMenu().importaExternalStorage();
+            }
+            if(requestCode == Costanti.RICHIESTA_PERMESSO_EXPORT){
+                Applicazione.getInstance().getControlloMenu().esportaExternalStorage();
+            }
+        } else {
+            Toast.makeText(Applicazione.getInstance(), R.string.StringaPermessoNegato, Toast.LENGTH_LONG).show();
+        }
+
     }
 
     ////////////////////////// SCHERMI ////////////////////////////

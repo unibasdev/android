@@ -36,6 +36,8 @@
     <string name="StringaNuovoStudente">Nuovo Studente</string>
     <string name="StringaImporta">Importa</string>
     <string name="StringaEsporta">Esporta</string>
+    <string name="StringaImportaExternalStorage">Importa dalla Memoria Esterna</string>
+    <string name="StringaEsportaExternalStorage">Esporta sulla Memoria Esterna</string>
     <string name="StringaEsci">Esci</string>
     <string name="StringaInformazioni">Informazioni sull\'Applicazione</string>
     <string name="StringaTabellaEsami">Tabella degli Esami</string>
@@ -80,4 +82,7 @@
     <string name="StringaOk">OK</string>
     <string name="StringaSelezionaFile">Nome del file</string>
     <string name="StringaInstallareFileManager">Installa un FileManager e riprova.</string>
+    <string name="StringaImportSuccesso">Import avvenuto con successo</string>
+    <string name="StringaExportSuccesso">Export avvenuto con successo</string>
+    <string name="StringaPermessoNegato">Controlla i permessi</string>
 </resources>
