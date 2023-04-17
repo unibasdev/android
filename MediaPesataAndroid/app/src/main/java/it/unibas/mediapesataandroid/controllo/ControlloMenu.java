@@ -25,6 +25,8 @@ import it.unibas.mediapesataandroid.modello.Studente;
 
 public class ControlloMenu {
 
+    private String TAG  = "ControlloMenu";
+
     private final MenuItem.OnMenuItemClickListener azioneInformazioni = new AzioneInformazioni();
     private final MenuItem.OnMenuItemClickListener azioneModificaDatiStudente = new AzioneModificaDatiStudente();
     private final MenuItem.OnMenuItemClickListener azioneScegliFileImporta = new AzioneScegliFileImporta();
@@ -197,10 +199,11 @@ public class ControlloMenu {
 
         @Override
         public boolean onMenuItemClick(MenuItem item) {
-            if (ContextCompat.checkSelfPermission(Applicazione.getInstance().getCurrentActivity(),
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE)   != PackageManager.PERMISSION_GRANTED) {
+            if (ContextCompat.checkSelfPermission(Applicazione.getInstance(),
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(Applicazione.getInstance().getCurrentActivity(),
-                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},Costanti.RICHIESTA_PERMESSO_EXPORT);
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        Costanti.RICHIESTA_PERMESSO_EXPORT);
             }else {
                 esportaExternalStorage();
             }
@@ -212,6 +215,7 @@ public class ControlloMenu {
         try {
             Studente studente = (Studente) Applicazione.getInstance().getModello().getPersistentBean(Costanti.STUDENTE, Studente.class);
             String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/studente_export.json";
+            Log.d(TAG, "Salvo lo studente nel percorso " + path);
             Applicazione.getInstance().getDaoStudente().salva(studente, new FileOutputStream(path));
             Toast.makeText(Applicazione.getInstance(), R.string.StringaExportSuccesso, Toast.LENGTH_LONG).show();
         } catch (Exception e) {

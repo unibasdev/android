@@ -16,9 +16,11 @@ public class Applicazione extends Application {
 
     public static final String TAG = Applicazione.class.getSimpleName();
 
-    private static Applicazione singleton;
+                private static Applicazione singleton;
 
+    @Override
     public void onCreate() {
+        super.onCreate();
         Log.d(TAG, "Creata Applicazione");
         singleton = (Applicazione) getApplicationContext();
         singleton.registerActivityLifecycleCallbacks(new GestoreAttivita());
@@ -72,17 +74,17 @@ public class Applicazione extends Application {
     private class GestoreAttivita implements ActivityLifecycleCallbacks {
         @Override
         public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-            //Log.i(TAG, "onActivityCreated: " + activity);
+            Log.i(TAG, "onActivityCreated: " + activity);
         }
 
         @Override
         public void onActivityDestroyed(Activity activity) {
-            //Log.i(TAG, "onActivityDestroyed: " + activity);
+            Log.i(TAG, "onActivityDestroyed: " + activity);
         }
 
         @Override
         public void onActivityStarted(Activity activity) {
-            //Log.d(TAG, "onActivityStarted: " + activity);
+            Log.d(TAG, "onActivityStarted: " + activity);
         }
 
         @Override
@@ -93,7 +95,7 @@ public class Applicazione extends Application {
 
         @Override
         public void onActivityPaused(Activity activity) {
-            //Log.d(TAG, "onActivityPaused: " + activity);
+            Log.d(TAG, "onActivityPaused: " + activity);
         }
 
         @Override
@@ -106,7 +108,7 @@ public class Applicazione extends Application {
 
         @Override
         public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
-            //Log.d(TAG, "onActivitySaveInstanceState: " + activity);
+            Log.d(TAG, "onActivitySaveInstanceState: " + activity);
         }
     }
 }
