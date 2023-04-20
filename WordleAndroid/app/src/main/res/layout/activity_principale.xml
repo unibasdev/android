@@ -1,0 +1,12 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/containerVistaPrincipale"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment android:name="it.unibas.wordle.vista.VistaPrincipale"
+              android:id="@+id/vistaPrincipale"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" />
+
+
+</FrameLayout>

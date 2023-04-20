@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menuNuovaPartita"
+        android:title="Nuova partita"
+        app:showAsAction="always"
+        android:enabled="false"
+        />
+    <item android:id="@+id/menuInterrompi"
+        android:title="Interrompi la partita"
+        android:enabled="false"
+        app:showAsAction="never"
+        />
+</menu>

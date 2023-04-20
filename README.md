@@ -16,6 +16,8 @@ A "Rock, Paper, Scissors" game for Android. Play with rocks, papers and scissors
 ## Weighted Average
 Compute the weighted average grade of your university exams.
 
+## Wordle
+A clone of the popular Wordle app - Get 6 chances to guess a 5-letter (italian) word
 
 ### Credits
 

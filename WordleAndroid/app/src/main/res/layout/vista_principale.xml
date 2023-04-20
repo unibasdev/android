@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Benvenuto in WORDLE. \nCerca di indovinare la parola segreta in meno di 5 tentativi!"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <ListView
+            android:id="@+id/listaTentativi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/cardview_light_background"
+            android:dividerHeight="0dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Una lettera in posizione corretta sarà riportata in verde. Una presente, ma in posizione scorretta in giallo. Una lettera non presente sarà grigia!"
+            android:textStyle="italic" />
+    </LinearLayout>
+</ScrollView>
