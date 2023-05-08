@@ -15,13 +15,4 @@
         <item name="android:textColor">#fff</item>
     </style>
 
-    <!-- Stile Activity Impostazioni -->
-    <style name="SettingsTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
-        <item name="android:actionBarStyle">@style/SettingsTheme.ActionBar</item>
-    </style>
-
-    <style name="SettingsTheme.ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">@color/primary</item>
-    </style>
-
 </resources>

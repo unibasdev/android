@@ -15,9 +15,6 @@
         <item name="android:minWidth">64dp</item>
     </style>
 
-    <style name="SettingsTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
-    </style>
-
     <!--<style name="FloatingColorActionButton" parent="Material.Drawable.Ripple.Touch.Light">-->
         <!--<item name="rd_rippleColor">#33000000</item>-->
         <!--<item name="fab_backgroundColor">#FF2196F3</item>-->

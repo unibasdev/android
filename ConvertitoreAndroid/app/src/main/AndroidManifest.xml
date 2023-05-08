@@ -21,8 +21,7 @@
         <activity
             android:name=".activity.ActivityImpostazioni"
             android:label="@string/impostazioni"
-            android:parentActivityName=".activity.ActivityPrincipale"
-            android:theme="@style/SettingsTheme">
+            android:parentActivityName=".activity.ActivityPrincipale">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="it.unibas.convertitore.activity.ActivityPrincipale" />

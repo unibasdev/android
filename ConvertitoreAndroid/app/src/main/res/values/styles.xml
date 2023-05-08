@@ -15,16 +15,5 @@
         <item name="android:textColor">#fff</item>
     </style>
 
-    <!-- Stile Activity Impostazioni -->
-    <!-- Nella finestra delle impostazioni non c'è la barra perchè AppCompat
-      l'aggiunge solo alle activity che estendono ActionBarActivity
-      mentre le preferenze estendono PreferenceActivity. Per questo la aggiungiamo manualmente -->
-    <style name="SettingsTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
-        <item name="android:actionBarStyle">@style/SettingsTheme.ActionBar</item>
-    </style>
-
-    <style name="SettingsTheme.ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">@color/primary</item>
-    </style>
 
 </resources>

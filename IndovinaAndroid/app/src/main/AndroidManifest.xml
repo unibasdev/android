@@ -23,12 +23,7 @@
         </activity>
         <activity
             android:name=".activity.ActivityImpostazioni"
-            android:label="@string/informazioni"
-            android:parentActivityName=".activity.ActivityPartita"
-            android:theme="@style/SettingsTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.ActivityPartita"/>
+            android:label="@string/informazioni">
         </activity>
 
     </application>

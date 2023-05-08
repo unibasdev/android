@@ -4,15 +4,15 @@ import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import it.unibas.convertitore.R;
 
-public class ActivityImpostazioni extends PreferenceActivity {
+public class ActivityImpostazioni extends AppCompatActivity {
 
     @Override
-    @SuppressWarnings("deprecation")
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        PreferenceManager.setDefaultValues(getBaseContext(), R.xml.impostazioni, false);
-        addPreferencesFromResource(R.xml.impostazioni);
+        setContentView(R.layout.activity_impostazioni);
     }
 }
