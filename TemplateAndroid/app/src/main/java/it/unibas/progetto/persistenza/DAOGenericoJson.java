@@ -1,6 +1,5 @@
 package it.unibas.progetto.persistenza;
 
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonDeserializationContext;
@@ -21,7 +20,6 @@ import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -74,8 +72,8 @@ public class DAOGenericoJson {
             GsonBuilder builder = new GsonBuilder();
             builder.registerTypeAdapter(Date.class, new AdapterDate());
             Gson gson = builder.create();
-            Type listType = new TypeToken<ArrayList<T>>() {}.getType();
-            return gson.fromJson(flusso, listType);
+            Type typeOfT = TypeToken.getParameterized(List.class, t).getType();
+            return gson.fromJson(flusso, typeOfT);
         } catch (Exception e) {
             e.printStackTrace();
             throw new DAOException(e);
@@ -88,6 +86,7 @@ public class DAOGenericoJson {
             }
         }
     }
+
 
 
     /* ******************************************
