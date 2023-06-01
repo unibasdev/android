@@ -10,6 +10,7 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -20,8 +21,10 @@ import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class DAOGenericoJson {
@@ -43,15 +46,14 @@ public class DAOGenericoJson {
     /* ******************************************
      *               Caricamento
      * ****************************************** */
-    public Object carica(InputStream inputStream, Class t) throws DAOException {
-        Object oggetto = null;
+    public <T> T carica(InputStream inputStream, Class<T> t) throws DAOException {
         Reader flusso = null;
         try {
             flusso = new InputStreamReader(inputStream);
             GsonBuilder builder = new GsonBuilder();
             builder.registerTypeAdapter(Date.class, new AdapterDate());
             Gson gson = builder.create();
-            oggetto = gson.fromJson(flusso, t);
+            return gson.fromJson(flusso, t);
         } catch (Exception e) {
             e.printStackTrace();
             throw new DAOException(e);
@@ -63,8 +65,30 @@ public class DAOGenericoJson {
             } catch (java.io.IOException ioe) {
             }
         }
-        return oggetto;
     }
+
+    public <T> List<T> caricaLista(InputStream inputStream, Class<T> t) throws DAOException {
+        Reader flusso = null;
+        try {
+            flusso = new InputStreamReader(inputStream);
+            GsonBuilder builder = new GsonBuilder();
+            builder.registerTypeAdapter(Date.class, new AdapterDate());
+            Gson gson = builder.create();
+            Type listType = new TypeToken<ArrayList<T>>() {}.getType();
+            return gson.fromJson(flusso, listType);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new DAOException(e);
+        } finally {
+            try {
+                if (flusso != null) {
+                    flusso.close();
+                }
+            } catch (java.io.IOException ioe) {
+            }
+        }
+    }
+
 
     /* ******************************************
      *               Salvataggio
