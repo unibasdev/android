@@ -20,6 +20,9 @@ import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -29,13 +32,17 @@ public class DAOGenericoJson {
 
     private static String TAG = "DAOGenerico";
     private String datePatternFormat = "dd-MM-yyyy HH:mm:ss";
+    private String localDatePatternFormat = "yyyy-MM-dd";
+    private String localDateTimePatternFormat = "yyyy-MM-dd HH:mm:ss";
 
     /* ******************************************
      *               Conversione
      * ****************************************** */
-    public String toJson(Object oggetto){
+    public String toJson(Object oggetto) {
         GsonBuilder builder = new GsonBuilder();
         builder.registerTypeAdapter(Date.class, new AdapterDate());
+        builder.registerTypeAdapter(LocalDate.class, new AdapterLocalDate());
+        builder.registerTypeAdapter(LocalDateTime.class, new AdapterLocalDateTime());
         builder.setPrettyPrinting();
         Gson gson = builder.create();
         return gson.toJson(oggetto);
@@ -50,6 +57,8 @@ public class DAOGenericoJson {
             flusso = new InputStreamReader(inputStream);
             GsonBuilder builder = new GsonBuilder();
             builder.registerTypeAdapter(Date.class, new AdapterDate());
+            builder.registerTypeAdapter(LocalDate.class, new AdapterLocalDate());
+            builder.registerTypeAdapter(LocalDateTime.class, new AdapterLocalDateTime());
             Gson gson = builder.create();
             return gson.fromJson(flusso, t);
         } catch (Exception e) {
@@ -71,6 +80,8 @@ public class DAOGenericoJson {
             flusso = new InputStreamReader(inputStream);
             GsonBuilder builder = new GsonBuilder();
             builder.registerTypeAdapter(Date.class, new AdapterDate());
+            builder.registerTypeAdapter(LocalDate.class, new AdapterLocalDate());
+            builder.registerTypeAdapter(LocalDateTime.class, new AdapterLocalDateTime());
             Gson gson = builder.create();
             Type typeOfT = TypeToken.getParameterized(List.class, t).getType();
             return gson.fromJson(flusso, typeOfT);
@@ -86,7 +97,6 @@ public class DAOGenericoJson {
             }
         }
     }
-
 
 
     /* ******************************************
@@ -129,11 +139,36 @@ public class DAOGenericoJson {
         }
     }
 
-    public String getDatePatternFormat() {
-        return datePatternFormat;
+
+    private class AdapterLocalDate implements JsonSerializer<LocalDate>, JsonDeserializer<LocalDate> {
+
+        public JsonElement serialize(LocalDate date, Type tipo, JsonSerializationContext context) {
+            return new JsonPrimitive(date.format(DateTimeFormatter.ofPattern(localDatePatternFormat)));
+        }
+
+        public LocalDate deserialize(JsonElement json, Type tipo, JsonDeserializationContext context) throws JsonParseException {
+            try {
+                return LocalDate.parse(json.getAsString(), DateTimeFormatter.ofPattern(localDatePatternFormat));
+            } catch (Exception ex) {
+                throw new JsonParseException(ex);
+            }
+        }
     }
 
-    public void setDatePatternFormat(String datePatternFormat) {
-        this.datePatternFormat = datePatternFormat;
+
+    private class AdapterLocalDateTime implements JsonSerializer<LocalDateTime>, JsonDeserializer<LocalDateTime> {
+
+        public JsonElement serialize(LocalDateTime date, Type tipo, JsonSerializationContext context) {
+            return new JsonPrimitive(date.format(DateTimeFormatter.ofPattern(localDateTimePatternFormat)));
+        }
+
+        public LocalDateTime deserialize(JsonElement json, Type tipo, JsonDeserializationContext context) throws JsonParseException {
+            try {
+                return LocalDateTime.parse(json.getAsString(), DateTimeFormatter.ofPattern(localDateTimePatternFormat));
+            } catch (Exception ex) {
+                throw new JsonParseException(ex);
+            }
+        }
     }
+
 }
