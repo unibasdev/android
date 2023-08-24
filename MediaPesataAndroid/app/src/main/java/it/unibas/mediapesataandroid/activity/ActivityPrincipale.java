@@ -73,11 +73,12 @@ public class ActivityPrincipale extends AppCompatActivity {
     ////////////////////////// CALLBACK PERMESSI ////////////////////////
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        if (grantResults.length > 0  && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            if(requestCode == Costanti.RICHIESTA_PERMESSO_IMPORT){
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (requestCode == Costanti.RICHIESTA_PERMESSO_IMPORT) {
                 Applicazione.getInstance().getControlloMenu().importaExternalStorage();
             }
-            if(requestCode == Costanti.RICHIESTA_PERMESSO_EXPORT){
+            if (requestCode == Costanti.RICHIESTA_PERMESSO_EXPORT) {
                 Applicazione.getInstance().getControlloMenu().esportaExternalStorage();
             }
         } else {

@@ -20,9 +20,9 @@ public class AsyncTaskDownloadArchivio extends AsyncTask<Void, Void, Archivio> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-            ActivityPrincipale activityPrincipale = (ActivityPrincipale) Applicazione.getInstance().getCurrentActivity();
-            VistaPrincipale vistaPrincipale = activityPrincipale.getVistaPrincipale();
-            vistaPrincipale.mostraFinestraCaricamento();
+        ActivityPrincipale activityPrincipale = (ActivityPrincipale) Applicazione.getInstance().getCurrentActivity();
+        VistaPrincipale vistaPrincipale = activityPrincipale.getVistaPrincipale();
+        vistaPrincipale.mostraFinestraCaricamento();
     }
 
     @Override
@@ -38,7 +38,7 @@ public class AsyncTaskDownloadArchivio extends AsyncTask<Void, Void, Archivio> {
             Archivio archivio = (Archivio) Applicazione.getInstance().getDaoGenericoJson().carica(risultato, Archivio.class);
             Log.d(TAG, "Archivio: " + archivio);
             return archivio;
-        }catch(Exception e){
+        } catch (Exception e) {
             Log.e(TAG, "Impossibile scaricare l'archivio " + e.getLocalizedMessage());
             return null;
         }
@@ -48,12 +48,12 @@ public class AsyncTaskDownloadArchivio extends AsyncTask<Void, Void, Archivio> {
     protected void onPostExecute(Archivio archivio) {
         super.onPostExecute(archivio);
         ActivityPrincipale activityPrincipale = (ActivityPrincipale) Applicazione.getInstance().getCurrentActivity();
-        if(activityPrincipale == null){
+        if (activityPrincipale == null) {
             return;
         }
         VistaPrincipale vistaPrincipale = activityPrincipale.getVistaPrincipale();
         vistaPrincipale.chiudiFinestraCaricamento();
-        if(archivio == null){
+        if (archivio == null) {
             activityPrincipale.mostraMessaggio("Errore durante il caricamento dei dati");
             return;
         }

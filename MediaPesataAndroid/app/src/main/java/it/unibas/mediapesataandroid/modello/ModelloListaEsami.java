@@ -56,11 +56,11 @@ public class ModelloListaEsami extends BaseAdapter {
         }
         Esame esame = studente.getEsame(posizione);
         Log.d(TAG, "Mostro esame " + esame.toString());
-        TextView labelInsegnamento = (TextView) riga.findViewById(R.id.rigaTestoInsegnamento);
+        TextView labelInsegnamento = riga.findViewById(R.id.rigaTestoInsegnamento);
         labelInsegnamento.setText(esame.getInsegnamento());
-        TextView labelData = (TextView) riga.findViewById(R.id.rigaTestoCreditiData);
+        TextView labelData = riga.findViewById(R.id.rigaTestoCreditiData);
         labelData.setText(esame.getCrediti() + " CFU - " + esame.getTestoDataRegistrazione());
-        TextView labelVoto = (TextView) riga.findViewById(R.id.rigaTestoVoto);
+        TextView labelVoto = riga.findViewById(R.id.rigaTestoVoto);
         if (esame.isLode()) {
             labelVoto.setText(esame.getVoto() + "+");
         } else {
