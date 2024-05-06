@@ -1,0 +1,12 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/containerVistaLogin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment android:name="it.unibas.mediapesataclient.vista.VistaLogin"
+              android:id="@+id/vistaLogin"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" />
+
+
+</FrameLayout>

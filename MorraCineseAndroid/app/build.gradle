@@ -4,11 +4,11 @@ android {
     compileSdkVersion 33
 
     defaultConfig {
-        applicationId "it.unibas.morracineseandroid"
+        applicationId "unibas.it.morracineseandroid"
         minSdkVersion 19
         targetSdkVersion 33
         versionCode 2
-        versionName "1.0.1"
+        versionName "1.1"
     }
     buildTypes {
         release {
@@ -20,12 +20,13 @@ android {
     testOptions {
         unitTests.returnDefaultValues = true
     }
+    namespace 'it.unibas.morracineseandroid'
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
-    implementation 'androidx.preference:preference:1.2.0'
-    testImplementation 'junit:junit:4.13'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.preference:preference:1.2.1'
+    testImplementation 'junit:junit:4.13.2'
 }

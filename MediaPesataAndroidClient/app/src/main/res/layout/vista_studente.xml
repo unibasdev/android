@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:text="12345"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/labelMatricola"
+                    android:layout_weight="1" />
+
+            <TextView
+                    android:text="Anno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/labelAnno"
+                    android:layout_weight="1"
+                    android:gravity="end" />
+        </LinearLayout>
+
+        <TextView
+                android:text="Nome Cognome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/labelNomeCognome"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/accent"
+                android:textStyle="bold" />
+
+        <TextView
+                android:text="Media Pesata: --"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/labelMediaPesata"
+                android:gravity="center"
+                android:textColor="@color/accent" />
+
+        <Button
+                android:text="Aggiungi Esame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bottoneAggiungiEsame"
+                android:layout_marginTop="10dp" />
+
+        <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:id="@+id/listaEsami" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+        <TextView
+                android:text="Insegnamento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/labelInsegnamento" />
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/campoInsegnamento" />
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                <TextView
+                        android:text="Voto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/labelVoto" />
+
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:id="@+id/campoVoto"
+                            android:inputType="number"
+                            android:layout_weight="1"
+                            android:text="18" />
+
+                    <Switch
+                            android:text="Lode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/campoLode"
+                            android:layout_weight="0" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                <TextView
+                        android:text="Crediti"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/labelVoto2" />
+
+                <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:id="@+id/campoCrediti"
+                        android:inputType="number"
+                        android:text="6" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+                android:text="Data Registrazione"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/labelData" />
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:ems="10"
+                    android:id="@+id/campoData"
+                    android:layout_weight="1" />
+        </LinearLayout>
+
+        <Button
+                android:text="Aggiungi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bottoneAggiungi"
+                android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+</ScrollView>
