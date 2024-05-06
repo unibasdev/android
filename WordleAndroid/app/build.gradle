@@ -21,6 +21,7 @@ android {
     testOptions {
         unitTests.returnDefaultValues = true
     }
+    namespace 'it.unibas.wordle'
 }
 
 dependencies {
