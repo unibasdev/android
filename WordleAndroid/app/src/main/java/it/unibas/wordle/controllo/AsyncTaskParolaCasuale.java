@@ -29,11 +29,11 @@ public class AsyncTaskParolaCasuale extends AsyncTask<Void, Void, String> {
     @Override
     protected String doInBackground(Void... voids) {
         try {
-            String indirizzo = Costanti.SERVER_URL + "random/";
+            String indirizzo = Costanti.SERVER_URL + "random";
             Log.d(TAG, "Indirizzo: " + indirizzo);
             URL url = new URL(indirizzo);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-            urlConnection.setRequestMethod("GET");
+            urlConnection.setRequestMethod("POST");
             urlConnection.connect();
             InputStream risultato = urlConnection.getInputStream();
             String parolaCasuale = (String) Applicazione.getInstance().getDaoGenericoJson().carica(risultato, String.class);

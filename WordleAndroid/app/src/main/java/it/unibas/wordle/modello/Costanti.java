@@ -2,7 +2,7 @@ package it.unibas.wordle.modello;
 
 public class Costanti {
 
-    public final static String SERVER_URL = "https://informatica.unibas.it/restpoo2/rest/dizionario/";
+    public final static String SERVER_URL = "https://informatica.unibas.it/restpoo2/wordle-jersey/api/v1/dizionario/";
 
     public static final int MAX_TENTATIVI = 5;
 
