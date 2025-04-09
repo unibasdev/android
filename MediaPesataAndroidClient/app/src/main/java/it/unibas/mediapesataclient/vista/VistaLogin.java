@@ -38,7 +38,8 @@ public class VistaLogin extends Fragment {
     }
 
     public void mostraFinestraCaricamento() {
-        progressDialog = ProgressDialog.show(Applicazione.getInstance().getCurrentActivity(), "Caricamento", "Caricamento in corso. Attendi...", true);
+        progressDialog = ProgressDialog.show(Applicazione.getInstance().getCurrentActivity(),
+                "Caricamento", "Caricamento in corso. Attendi...", true);
         progressDialog.show();
     }
 
