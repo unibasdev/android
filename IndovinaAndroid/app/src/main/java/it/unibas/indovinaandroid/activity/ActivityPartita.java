@@ -35,8 +35,7 @@ public class ActivityPartita extends AppCompatActivity {
     ////////////////////////// MENU ////////////////////////////
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_activity_partita, menu);
+        getMenuInflater().inflate(R.menu.menu_activity_partita, menu);
         menu.findItem(R.id.menu_visualizza_record).setOnMenuItemClickListener(Applicazione.getInstance().getControlloMenu().getAzioneVisualizzaRecord());
         menu.findItem(R.id.menu_nuova_partita).setOnMenuItemClickListener(Applicazione.getInstance().getControlloMenu().getAzioneNuovaPartita());
         menu.findItem(R.id.menu_interrompi_partita).setOnMenuItemClickListener(Applicazione.getInstance().getControlloMenu().getAzioneInterrompiPartita());

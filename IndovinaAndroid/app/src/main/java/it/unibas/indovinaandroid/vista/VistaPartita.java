@@ -33,11 +33,11 @@ public class VistaPartita extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //Tutte le proprieta' devono essere inizializzate qui
         View vista = inflater.inflate(R.layout.vista_partita, container, false);
-        textTentativo = (EditText) vista.findViewById(R.id.testoTentativo);
-        labelMessaggio1 = (TextView) vista.findViewById(R.id.labelMessaggio1);
-        labelMessaggio2 = (TextView) vista.findViewById(R.id.labelMessaggio2);
-        labelNumeroTentativi = (TextView) vista.findViewById(R.id.labelNumeroTentativi);
-        bottoneTentativo = (FloatingActionButton) vista.findViewById(R.id.bottoneTentativo);
+        textTentativo = vista.findViewById(R.id.testoTentativo);
+        labelMessaggio1 = vista.findViewById(R.id.labelMessaggio1);
+        labelMessaggio2 = vista.findViewById(R.id.labelMessaggio2);
+        labelNumeroTentativi = vista.findViewById(R.id.labelNumeroTentativi);
+        bottoneTentativo = vista.findViewById(R.id.bottoneTentativo);
         inizializzaAzioni();
         schermoNuovaPartita();
 //        durataAnimazione = getResources().getInteger(android.R.integer.config_shortAnimTime);

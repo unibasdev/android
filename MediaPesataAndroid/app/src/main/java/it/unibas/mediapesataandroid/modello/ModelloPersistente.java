@@ -18,6 +18,7 @@ public class ModelloPersistente {
 
     private final static String TAG = ModelloPersistente.class.getSimpleName();
     private final DAOGenericoJson daoGenericoJson = new DAOGenericoJson();
+
     private final Map<String, Object> cache = new HashMap<String, Object>();
 
     public void saveBean(String key, Object bean) {
