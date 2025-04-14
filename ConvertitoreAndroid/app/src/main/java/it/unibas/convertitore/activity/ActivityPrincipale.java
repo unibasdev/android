@@ -26,12 +26,12 @@ public class ActivityPrincipale extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_activity_principale, menu);
         MenuItem menuItemInformazioni = menu.findItem(R.id.menu_impostazioni);
-        menuItemInformazioni.setOnMenuItemClickListener(Applicazione.getInstance().getControlloMenu().getAzioneInformazioni());
+        menuItemInformazioni.setOnMenuItemClickListener(Applicazione.getInstance().getControlloMenu().getAzioneImpostazioni());
         return true;
     }
 
     public VistaPrincipale getVistaPrincipale() {
-        return (VistaPrincipale)this.getSupportFragmentManager().findFragmentById(R.id.vistaPrincipale);
+        return (VistaPrincipale) this.getSupportFragmentManager().findFragmentById(R.id.vistaPrincipale);
     }
 
     public void mostraImpostazioni(){

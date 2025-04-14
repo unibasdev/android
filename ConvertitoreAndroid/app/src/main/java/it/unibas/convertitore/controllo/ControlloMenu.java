@@ -7,20 +7,20 @@ import it.unibas.convertitore.activity.ActivityPrincipale;
 
 public class ControlloMenu {
 
-    private final MenuItem.OnMenuItemClickListener azioneInformazioni = new AzioneInformazioni();
+    private final MenuItem.OnMenuItemClickListener azioneImpostazioni = new ActivityImpostazioni();
 
-    public MenuItem.OnMenuItemClickListener getAzioneInformazioni() {
-        return azioneInformazioni;
+    public MenuItem.OnMenuItemClickListener getAzioneImpostazioni() {
+        return azioneImpostazioni;
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
-    private class AzioneInformazioni implements MenuItem.OnMenuItemClickListener {
+    private class ActivityImpostazioni implements MenuItem.OnMenuItemClickListener {
 
-        public final static String TAG = "AzioneInformazioni";
+        public final String TAG = ActivityImpostazioni.class.getSimpleName();
 
         @Override
         public boolean onMenuItemClick(MenuItem item) {
-            ActivityPrincipale activity = (ActivityPrincipale)Applicazione.getInstance().getCurrentActivity();
+            ActivityPrincipale activity = (ActivityPrincipale) Applicazione.getInstance().getCurrentActivity();
             activity.mostraImpostazioni();
             return true;
         }

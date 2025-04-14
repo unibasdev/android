@@ -27,14 +27,15 @@ public class VistaPrincipale extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View fragment = inflater.inflate(R.layout.vista_principale, container, false);
-        this.editTextVoto30mi = (EditText) fragment.findViewById(R.id.editTextVoto30mi);
-        this.editTextVotoLaurea = (EditText) fragment.findViewById(R.id.editTextVoto110mi);
-        Button buttonConverti = (Button) fragment.findViewById(R.id.buttonConverti);
+        this.editTextVoto30mi = fragment.findViewById(R.id.editTextVoto30mi);
+        this.editTextVotoLaurea = fragment.findViewById(R.id.editTextVoto110mi);
+        Button buttonConverti = fragment.findViewById(R.id.buttonConverti);
         buttonConverti.setOnClickListener(Applicazione.getInstance().getControlloPrincipale().getAzioneConverti());
-        Button buttonReset = (Button) fragment.findViewById(R.id.buttonReset);
+        Button buttonReset = fragment.findViewById(R.id.buttonReset);
         buttonReset.setOnClickListener(Applicazione.getInstance().getControlloPrincipale().getAzioneReset());
-        this.textViewMessaggioConferma = (TextView)fragment.findViewById(R.id.textViewMessaggioConferma);
+        this.textViewMessaggioConferma = fragment.findViewById(R.id.textViewMessaggioConferma);
         Log.i(TAG, "VistaPrincipale.onCreateView()");
+
         return fragment;
     }
 
