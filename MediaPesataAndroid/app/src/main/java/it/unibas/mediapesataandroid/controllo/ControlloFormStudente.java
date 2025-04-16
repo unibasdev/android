@@ -3,9 +3,9 @@ package it.unibas.mediapesataandroid.controllo;
 import android.view.MenuItem;
 
 import it.unibas.mediapesataandroid.Applicazione;
-import it.unibas.mediapesataandroid.Costanti;
 import it.unibas.mediapesataandroid.R;
 import it.unibas.mediapesataandroid.activity.ActivityFormStudente;
+import it.unibas.mediapesataandroid.modello.EBean;
 import it.unibas.mediapesataandroid.modello.ModelloPersistente;
 import it.unibas.mediapesataandroid.modello.Studente;
 import it.unibas.mediapesataandroid.vista.VistaFormStudente;
@@ -54,11 +54,11 @@ public class ControlloFormStudente {
             String cognome = vistaFormStudente.getCognome();
             int matricola = Integer.parseInt(vistaFormStudente.getMatricola());
             ModelloPersistente modello = Applicazione.getInstance().getModello();
-            Studente studente = (Studente) modello.getPersistentBean(Costanti.STUDENTE, Studente.class);
+            Studente studente = (Studente) modello.getPersistentBean(EBean.STUDENTE, Studente.class);
             studente.setNome(nome);
             studente.setCognome(cognome);
             studente.setMatricola(matricola);
-            modello.saveBean(Costanti.STUDENTE, studente);
+            modello.saveBean(EBean.STUDENTE, studente);
             activityFormStudente.finish();
             return true;
         }

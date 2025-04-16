@@ -5,9 +5,9 @@ import android.view.MenuItem;
 import java.util.Calendar;
 
 import it.unibas.mediapesataandroid.Applicazione;
-import it.unibas.mediapesataandroid.Costanti;
 import it.unibas.mediapesataandroid.R;
 import it.unibas.mediapesataandroid.activity.ActivityFormEsame;
+import it.unibas.mediapesataandroid.modello.EBean;
 import it.unibas.mediapesataandroid.modello.Esame;
 import it.unibas.mediapesataandroid.modello.ModelloPersistente;
 import it.unibas.mediapesataandroid.modello.Studente;
@@ -64,9 +64,9 @@ public class ControlloFormEsame {
             boolean lode = vistaFormEsame.getLode();
             Calendar dataRegistrazione = vistaFormEsame.getDataRegistrazione();
             ModelloPersistente modello = Applicazione.getInstance().getModello();
-            Studente studente = (Studente) modello.getPersistentBean(Costanti.STUDENTE, Studente.class);
+            Studente studente = (Studente) modello.getPersistentBean(EBean.STUDENTE, Studente.class);
             studente.addEsame(insegnamento, voto, lode, crediti, dataRegistrazione);
-            modello.saveBean(Costanti.STUDENTE, studente);
+            modello.saveBean(EBean.STUDENTE, studente);
             activityFormEsame.finish();
             return true;
         }
@@ -91,14 +91,14 @@ public class ControlloFormEsame {
             boolean lode = vistaFormEsame.getLode();
             Calendar dataRegistrazione = vistaFormEsame.getDataRegistrazione();
             ModelloPersistente modello = Applicazione.getInstance().getModello();
-            Studente studente = (Studente) modello.getPersistentBean(Costanti.STUDENTE, Studente.class);
-            Esame esameModificare = (Esame) modello.getPersistentBean(Costanti.ESAME, Esame.class);
+            Studente studente = (Studente) modello.getPersistentBean(EBean.STUDENTE, Studente.class);
+            Esame esameModificare = (Esame) modello.getPersistentBean(EBean.ESAME, Esame.class);
             esameModificare.setInsegnamento(insegnamento);
             esameModificare.setVoto(voto);
             esameModificare.setLode(lode);
             esameModificare.setCrediti(crediti);
             esameModificare.setDataRegistrazione(dataRegistrazione);
-            modello.saveBean(Costanti.STUDENTE, studente);
+            modello.saveBean(EBean.STUDENTE, studente);
             activityFormEsame.finish();
             return true;
         }

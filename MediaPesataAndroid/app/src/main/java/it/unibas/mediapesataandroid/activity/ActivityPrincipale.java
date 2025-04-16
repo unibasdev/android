@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import it.unibas.mediapesataandroid.Applicazione;
 import it.unibas.mediapesataandroid.Costanti;
 import it.unibas.mediapesataandroid.R;
+import it.unibas.mediapesataandroid.modello.EBean;
 import it.unibas.mediapesataandroid.modello.ModelloPersistente;
 import it.unibas.mediapesataandroid.modello.Studente;
 import it.unibas.mediapesataandroid.vista.VistaEsami;
@@ -34,9 +35,9 @@ public class ActivityPrincipale extends AppCompatActivity {
 
     private void azioneIniziale() {
         ModelloPersistente modello = Applicazione.getInstance().getModello();
-        Studente studente = (Studente) modello.getPersistentBean(Costanti.STUDENTE, Studente.class);
+        Studente studente = (Studente) modello.getPersistentBean(EBean.STUDENTE, Studente.class);
         if (studente == null) {
-            modello.saveBean(Costanti.STUDENTE, new Studente());
+            modello.saveBean(EBean.STUDENTE, new Studente());
             schermoFormStudente();
         }
     }
@@ -155,6 +156,7 @@ public class ActivityPrincipale extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == Costanti.AZIONE_APRI) {
             if (resultCode == RESULT_OK && data != null) {
                 Uri fileSelezionato = data.getData();

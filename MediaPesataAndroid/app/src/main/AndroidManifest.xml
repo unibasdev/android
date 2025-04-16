@@ -19,12 +19,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.ActivityFormEsame"
-            android:theme="@style/Theme.AppCompat.Light.DialogWhenLarge">
+            android:name=".activity.ActivityFormEsame">
         </activity>
         <activity
             android:name=".activity.ActivityFormStudente"
-            android:theme="@style/Theme.AppCompat.Light.DialogWhenLarge">
+            android:label="@string/StringaModificaStudente">
         </activity>
 
         <activity

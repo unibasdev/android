@@ -1,15 +1,16 @@
 package it.unibas.mediapesataandroid.vista;
 
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
+
 import it.unibas.mediapesataandroid.Applicazione;
-import it.unibas.mediapesataandroid.Costanti;
 import it.unibas.mediapesataandroid.R;
+import it.unibas.mediapesataandroid.modello.EBean;
 import it.unibas.mediapesataandroid.modello.ModelloPersistente;
 import it.unibas.mediapesataandroid.modello.Studente;
 
@@ -39,7 +40,7 @@ public class VistaStudente extends Fragment {
     ////////////////////////// SCHERMI ////////////////////////////
     public void aggiornaDatiStudente() {
         ModelloPersistente modello = Applicazione.getInstance().getModello();
-        Studente studente = (Studente) modello.getPersistentBean(Costanti.STUDENTE, Studente.class);
+        Studente studente = (Studente) modello.getPersistentBean(EBean.STUDENTE, Studente.class);
         testoCognome.setText(studente.getCognome());
         testoNome.setText(studente.getNome());
         testoMatricola.setText(studente.getMatricola() + "");

@@ -21,6 +21,7 @@ import it.unibas.mediapesataandroid.Applicazione;
 import it.unibas.mediapesataandroid.Costanti;
 import it.unibas.mediapesataandroid.R;
 import it.unibas.mediapesataandroid.activity.ActivityPrincipale;
+import it.unibas.mediapesataandroid.modello.EBean;
 import it.unibas.mediapesataandroid.modello.Studente;
 
 public class ControlloMenu {
@@ -114,7 +115,7 @@ public class ControlloMenu {
     ///////////////////////////////////////////////////////////////////////////////////
 
     public void azioneEsporta(Uri fileSelezionato) {
-        Studente studente = (Studente) Applicazione.getInstance().getModello().getPersistentBean(Costanti.STUDENTE, Studente.class);
+        Studente studente = (Studente) Applicazione.getInstance().getModello().getPersistentBean(EBean.STUDENTE, Studente.class);
         OutputStream os = null;
         try {
             os = Applicazione.getInstance().getContentResolver().openOutputStream(fileSelezionato);
@@ -142,7 +143,7 @@ public class ControlloMenu {
         try {
             is = Applicazione.getInstance().getContentResolver().openInputStream(fileSelezionato);
             Studente studente = (Studente) Applicazione.getInstance().getDaoStudente().carica(is, Studente.class);
-            Applicazione.getInstance().getModello().saveBean(Costanti.STUDENTE, studente);
+            Applicazione.getInstance().getModello().saveBean(EBean.STUDENTE, studente);
         } catch (Exception e) {
             Log.e("Azione importa", "Impossibile esportare lo studente", e);
             e.printStackTrace();
@@ -182,7 +183,7 @@ public class ControlloMenu {
         try {
             String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/studente_export.json";
             Studente studente = (Studente) Applicazione.getInstance().getDaoStudente().carica(new FileInputStream(path), Studente.class);
-            Applicazione.getInstance().getModello().saveBean(Costanti.STUDENTE, studente);
+            Applicazione.getInstance().getModello().saveBean(EBean.STUDENTE, studente);
             Toast.makeText(Applicazione.getInstance(), R.string.StringaImportSuccesso, Toast.LENGTH_LONG).show();
         } catch (Exception e) {
             Log.e("Azione importa", "Impossibile esportare lo studente", e);
@@ -213,7 +214,7 @@ public class ControlloMenu {
 
     public void esportaExternalStorage(){
         try {
-            Studente studente = (Studente) Applicazione.getInstance().getModello().getPersistentBean(Costanti.STUDENTE, Studente.class);
+            Studente studente = (Studente) Applicazione.getInstance().getModello().getPersistentBean(EBean.STUDENTE, Studente.class);
             String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/studente_export.json";
             Log.d(TAG, "Salvo lo studente nel percorso " + path);
             Applicazione.getInstance().getDaoStudente().salva(studente, new FileOutputStream(path));

@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.AdapterView;
 
 import it.unibas.mediapesataandroid.Applicazione;
-import it.unibas.mediapesataandroid.Costanti;
 import it.unibas.mediapesataandroid.activity.ActivityPrincipale;
+import it.unibas.mediapesataandroid.modello.EBean;
 import it.unibas.mediapesataandroid.modello.Esame;
 import it.unibas.mediapesataandroid.modello.ModelloPersistente;
 import it.unibas.mediapesataandroid.modello.Studente;
@@ -49,7 +49,7 @@ public class ControlloPrincipale {
         public void onClick(View view) {
             Log.d(TAG, "Eseguo AzioneInserisciEsame");
             ModelloPersistente modello = Applicazione.getInstance().getModello();
-            modello.saveBean(Costanti.ESAME, null);
+            modello.saveBean(EBean.ESAME, null);
             ActivityPrincipale activityPrincipale = (ActivityPrincipale) Applicazione.getInstance().getCurrentActivity();
             activityPrincipale.schermoFormEsame();
         }
@@ -64,9 +64,9 @@ public class ControlloPrincipale {
         public void onItemClick(AdapterView parent, View view, int position, long id) {
             Log.d(TAG, "Eseguo AzioneSelezionaEsame");
             ModelloPersistente modello = Applicazione.getInstance().getModello();
-            Studente studente = (Studente) modello.getPersistentBean(Costanti.STUDENTE, Studente.class);
+            Studente studente = modello.getPersistentBean(EBean.STUDENTE, Studente.class);
             Esame esameSelezionato = studente.getEsame(position);
-            modello.saveBean(Costanti.ESAME, esameSelezionato);
+            modello.saveBean(EBean.ESAME, esameSelezionato);
             ActivityPrincipale activityPrincipale = (ActivityPrincipale) Applicazione.getInstance().getCurrentActivity();
             activityPrincipale.schermoFormEsame();
         }
@@ -80,7 +80,7 @@ public class ControlloPrincipale {
         @Override
         public boolean onItemLongClick(AdapterView parent, View view, int position, long id) {
             Log.d(TAG, "Eseguo AzioneMostraOperazioniEsame");
-            Applicazione.getInstance().getModello().saveBean(Costanti.POSIZIONE, position);
+            Applicazione.getInstance().getModello().saveBean(EBean.POSIZIONE, position);
             ActivityPrincipale activityPrincipale = (ActivityPrincipale) Applicazione.getInstance().getCurrentActivity();
             activityPrincipale.finestraOperazioniEsame();
             return true;
@@ -111,10 +111,10 @@ public class ControlloPrincipale {
         public void onClick(DialogInterface dialogInterface, int i) {
             Log.d(TAG, "Eseguo AzioneEliminaEsame");
             ModelloPersistente modello = Applicazione.getInstance().getModello();
-            Studente studente = (Studente) modello.getPersistentBean(Costanti.STUDENTE, Studente.class);
-            Integer posizione = (Integer) Applicazione.getInstance().getModello().getPersistentBean(Costanti.POSIZIONE, Integer.class);
+            Studente studente = (Studente) modello.getPersistentBean(EBean.STUDENTE, Studente.class);
+            Integer posizione = (Integer) Applicazione.getInstance().getModello().getPersistentBean(EBean.POSIZIONE, Integer.class);
             studente.eliminaEsame(posizione);
-            modello.saveBean(Costanti.STUDENTE, studente);
+            modello.saveBean(EBean.STUDENTE, studente);
             ActivityPrincipale activityPrincipale = (ActivityPrincipale) Applicazione.getInstance().getCurrentActivity();
             activityPrincipale.getVistaEsami().aggiornaEsami();
         }

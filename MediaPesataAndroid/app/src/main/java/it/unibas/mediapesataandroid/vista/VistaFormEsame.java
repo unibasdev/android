@@ -1,7 +1,6 @@
 package it.unibas.mediapesataandroid.vista;
 
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,12 +8,14 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
+import androidx.fragment.app.Fragment;
+
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import it.unibas.mediapesataandroid.Applicazione;
-import it.unibas.mediapesataandroid.Costanti;
 import it.unibas.mediapesataandroid.R;
+import it.unibas.mediapesataandroid.modello.EBean;
 import it.unibas.mediapesataandroid.modello.Esame;
 import it.unibas.mediapesataandroid.modello.ModelloPersistente;
 
@@ -42,7 +43,7 @@ public class VistaFormEsame extends Fragment {
 
     private void inizializzaCampi() {
         ModelloPersistente modello = Applicazione.getInstance().getModello();
-        Esame esame = (Esame) modello.getPersistentBean(Costanti.ESAME, Esame.class);
+        Esame esame = (Esame) modello.getPersistentBean(EBean.ESAME, Esame.class);
         if(esame == null){
             //La form serve per creare un nuovo esame
             return;

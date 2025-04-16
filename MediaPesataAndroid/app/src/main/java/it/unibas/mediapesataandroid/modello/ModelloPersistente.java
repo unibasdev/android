@@ -3,10 +3,9 @@ package it.unibas.mediapesataandroid.modello;
 import android.util.Log;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,24 +13,24 @@ import it.unibas.mediapesataandroid.Applicazione;
 import it.unibas.mediapesataandroid.persistenza.DAOException;
 import it.unibas.mediapesataandroid.persistenza.DAOGenericoJson;
 
+@SuppressWarnings("unchecked")
 public class ModelloPersistente {
 
     private final static String TAG = ModelloPersistente.class.getSimpleName();
     private final DAOGenericoJson daoGenericoJson = new DAOGenericoJson();
+    private final Map<EBean, Object> cache = new HashMap<>();
 
-    private final Map<String, Object> cache = new HashMap<String, Object>();
-
-    public void saveBean(String key, Object bean) {
+    public void saveBean(EBean key, Object bean) {
         this.cache.put(key, bean);
         save(key, bean);
     }
 
-    public Object getPersistentBean(String key, Class type) {
-        Object cachedObject = this.cache.get(key);
+    public <T> T getPersistentBean(EBean key, Class<T> type) {
+        T cachedObject = (T) this.cache.get(key);
         if (cachedObject != null) {
             return cachedObject;
         }
-        Object persistentObject = load(key, type);
+        T persistentObject = (T) load(key, type);
         if (persistentObject == null) {
             return null;
         }
@@ -39,14 +38,14 @@ public class ModelloPersistente {
         return persistentObject;
     }
 
-    private Object load(String key, Class type) {
+    private <T> T load(EBean key, Class<T> type) {
         File file = new File(Applicazione.getInstance().getFilesDir(), getFileName(key));
         if (!file.exists()) {
             return null;
         }
         InputStream in = null;
         try {
-            in = new FileInputStream(file);
+            in = Files.newInputStream(file.toPath());
             return daoGenericoJson.carica(in, type);
         } catch (Exception e) {
             Log.e(TAG, e.getLocalizedMessage());
@@ -61,17 +60,17 @@ public class ModelloPersistente {
         return null;
     }
 
-    private void save(String key, Object bean) {
+    private void save(EBean key, Object bean) {
         File file = new File(Applicazione.getInstance().getFilesDir(), getFileName(key));
         try {
-            daoGenericoJson.salva(bean, new FileOutputStream(file));
+            daoGenericoJson.salva(bean, Files.newOutputStream(file.toPath()));
         } catch (Exception e) {
-            Log.e(TAG, e.getLocalizedMessage());
+            Log.e(TAG, e.getMessage());
             throw new DAOException(e.getLocalizedMessage());
         }
     }
 
-    private String getFileName(String key) {
-        return key + ".json";
+    private String getFileName(EBean key) {
+        return key.toString() + ".json";
     }
 }

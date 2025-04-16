@@ -1,14 +1,18 @@
 package it.unibas.mediapesataandroid.activity;
 
+import android.app.Dialog;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import it.unibas.mediapesataandroid.Applicazione;
-import it.unibas.mediapesataandroid.Costanti;
 import it.unibas.mediapesataandroid.R;
+import it.unibas.mediapesataandroid.modello.EBean;
 import it.unibas.mediapesataandroid.modello.Esame;
 import it.unibas.mediapesataandroid.modello.ModelloPersistente;
 import it.unibas.mediapesataandroid.vista.VistaFormEsame;
@@ -25,6 +29,17 @@ public class ActivityFormEsame extends AppCompatActivity {
         this.setContentView(R.layout.activity_form_esame);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Esame esame = Applicazione.getInstance().getModello().getPersistentBean(EBean.ESAME, Esame.class);
+        if (esame == null) {
+            setTitle(R.string.StringaInserisciEsame);
+        } else {
+            setTitle(R.string.StringaModificaEsame);
+        }
+    }
+
     public VistaFormEsame getVistaFormEsame() {
         return (VistaFormEsame) this.getSupportFragmentManager().findFragmentById(R.id.vistaFormEsame);
     }
@@ -38,7 +53,7 @@ public class ActivityFormEsame extends AppCompatActivity {
         menuItemAnnulla = menu.findItem(R.id.menu_annulla);
         menuItemAnnulla.setOnMenuItemClickListener(Applicazione.getInstance().getControlloFormEsame().getAzioneAnnulla());
         ModelloPersistente modello = Applicazione.getInstance().getModello();
-        Esame esame = (Esame) modello.getPersistentBean(Costanti.ESAME, Esame.class);
+        Esame esame = modello.getPersistentBean(EBean.ESAME, Esame.class);
         if (esame == null) {
             //La form serve per creare un nuovo esame
             menuItemOK.setOnMenuItemClickListener(Applicazione.getInstance().getControlloFormEsame().getAzioneAggiungiEsame());

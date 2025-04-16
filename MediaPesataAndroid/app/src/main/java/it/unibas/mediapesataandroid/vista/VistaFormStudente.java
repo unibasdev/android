@@ -1,15 +1,16 @@
 package it.unibas.mediapesataandroid.vista;
 
-import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
+import androidx.fragment.app.Fragment;
+
 import it.unibas.mediapesataandroid.Applicazione;
-import it.unibas.mediapesataandroid.Costanti;
 import it.unibas.mediapesataandroid.R;
+import it.unibas.mediapesataandroid.modello.EBean;
 import it.unibas.mediapesataandroid.modello.ModelloPersistente;
 import it.unibas.mediapesataandroid.modello.Studente;
 
@@ -33,7 +34,7 @@ public class VistaFormStudente extends Fragment {
 
     private void inizializzaCampi() {
         ModelloPersistente modello = Applicazione.getInstance().getModello();
-        Studente studente = (Studente) modello.getPersistentBean(Costanti.STUDENTE, Studente.class);
+        Studente studente = (Studente) modello.getPersistentBean(EBean.STUDENTE, Studente.class);
         if (studente == null) {
             return;
         }

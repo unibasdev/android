@@ -10,6 +10,7 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -20,21 +21,29 @@ import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class DAOGenericoJson {
 
     private static String TAG = "DAOGenerico";
     private String datePatternFormat = "dd-MM-yyyy HH:mm:ss";
+    private String localDatePatternFormat = "yyyy-MM-dd";
+    private String localDateTimePatternFormat = "yyyy-MM-dd HH:mm:ss";
 
     /* ******************************************
      *               Conversione
      * ****************************************** */
-    public String toJson(Object oggetto){
+    public String toJson(Object oggetto) {
         GsonBuilder builder = new GsonBuilder();
         builder.registerTypeAdapter(Date.class, new AdapterDate());
+        builder.registerTypeAdapter(LocalDate.class, new AdapterLocalDate());
+        builder.registerTypeAdapter(LocalDateTime.class, new AdapterLocalDateTime());
         builder.setPrettyPrinting();
         Gson gson = builder.create();
         return gson.toJson(oggetto);
@@ -43,15 +52,16 @@ public class DAOGenericoJson {
     /* ******************************************
      *               Caricamento
      * ****************************************** */
-    public Object carica(InputStream inputStream, Class t) throws DAOException {
-        Object oggetto = null;
+    public <T> T carica(InputStream inputStream, Class<T> t) throws DAOException {
         Reader flusso = null;
         try {
             flusso = new InputStreamReader(inputStream);
             GsonBuilder builder = new GsonBuilder();
             builder.registerTypeAdapter(Date.class, new AdapterDate());
+            builder.registerTypeAdapter(LocalDate.class, new AdapterLocalDate());
+            builder.registerTypeAdapter(LocalDateTime.class, new AdapterLocalDateTime());
             Gson gson = builder.create();
-            oggetto = gson.fromJson(flusso, t);
+            return gson.fromJson(flusso, t);
         } catch (Exception e) {
             e.printStackTrace();
             throw new DAOException(e);
@@ -63,8 +73,32 @@ public class DAOGenericoJson {
             } catch (java.io.IOException ioe) {
             }
         }
-        return oggetto;
     }
+
+    public <T> List<T> caricaLista(InputStream inputStream, Class<T> t) throws DAOException {
+        Reader flusso = null;
+        try {
+            flusso = new InputStreamReader(inputStream);
+            GsonBuilder builder = new GsonBuilder();
+            builder.registerTypeAdapter(Date.class, new AdapterDate());
+            builder.registerTypeAdapter(LocalDate.class, new AdapterLocalDate());
+            builder.registerTypeAdapter(LocalDateTime.class, new AdapterLocalDateTime());
+            Gson gson = builder.create();
+            Type typeOfT = TypeToken.getParameterized(List.class, t).getType();
+            return gson.fromJson(flusso, typeOfT);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new DAOException(e);
+        } finally {
+            try {
+                if (flusso != null) {
+                    flusso.close();
+                }
+            } catch (java.io.IOException ioe) {
+            }
+        }
+    }
+
 
     /* ******************************************
      *               Salvataggio
@@ -106,11 +140,36 @@ public class DAOGenericoJson {
         }
     }
 
-    public String getDatePatternFormat() {
-        return datePatternFormat;
+
+    private class AdapterLocalDate implements JsonSerializer<LocalDate>, JsonDeserializer<LocalDate> {
+
+        public JsonElement serialize(LocalDate date, Type tipo, JsonSerializationContext context) {
+            return new JsonPrimitive(date.format(DateTimeFormatter.ofPattern(localDatePatternFormat)));
+        }
+
+        public LocalDate deserialize(JsonElement json, Type tipo, JsonDeserializationContext context) throws JsonParseException {
+            try {
+                return LocalDate.parse(json.getAsString(), DateTimeFormatter.ofPattern(localDatePatternFormat));
+            } catch (Exception ex) {
+                throw new JsonParseException(ex);
+            }
+        }
     }
 
-    public void setDatePatternFormat(String datePatternFormat) {
-        this.datePatternFormat = datePatternFormat;
+
+    private class AdapterLocalDateTime implements JsonSerializer<LocalDateTime>, JsonDeserializer<LocalDateTime> {
+
+        public JsonElement serialize(LocalDateTime date, Type tipo, JsonSerializationContext context) {
+            return new JsonPrimitive(date.format(DateTimeFormatter.ofPattern(localDateTimePatternFormat)));
+        }
+
+        public LocalDateTime deserialize(JsonElement json, Type tipo, JsonDeserializationContext context) throws JsonParseException {
+            try {
+                return LocalDateTime.parse(json.getAsString(), DateTimeFormatter.ofPattern(localDateTimePatternFormat));
+            } catch (Exception ex) {
+                throw new JsonParseException(ex);
+            }
+        }
     }
+
 }

@@ -1,8 +1,6 @@
 package it.unibas.mediapesataandroid.vista;
 
 import android.os.Bundle;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import androidx.fragment.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,11 +8,15 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.text.DecimalFormat;
 
 import it.unibas.mediapesataandroid.Applicazione;
-import it.unibas.mediapesataandroid.Costanti;
 import it.unibas.mediapesataandroid.R;
+import it.unibas.mediapesataandroid.modello.EBean;
 import it.unibas.mediapesataandroid.modello.ModelloListaEsami;
 import it.unibas.mediapesataandroid.modello.ModelloPersistente;
 import it.unibas.mediapesataandroid.modello.Studente;
@@ -55,14 +57,14 @@ public class VistaEsami extends Fragment {
 
     public void aggiornaVista() {
         ModelloPersistente modello = Applicazione.getInstance().getModello();
-        Studente studente = (Studente) modello.getPersistentBean(Costanti.STUDENTE, Studente.class);
+        Studente studente = (Studente) modello.getPersistentBean(EBean.STUDENTE, Studente.class);
         this.listaEsami.setAdapter(new ModelloListaEsami(studente));
 //        this.listaEsami.setAdapter(new ArrayAdapter<Esame>(getActivity(), R.layout.riga_esami, R.id.rigaTestoInsegnamento, studente.getListaEsami()));
     }
 
     public void aggiornaEsami() {
         ModelloPersistente modello = Applicazione.getInstance().getModello();
-        Studente studente = (Studente) modello.getPersistentBean(Costanti.STUDENTE, Studente.class);
+        Studente studente = (Studente) modello.getPersistentBean(EBean.STUDENTE, Studente.class);
         calcolaMedia(studente);
         aggiornaListaEsami(studente);
     }
