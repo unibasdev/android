@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- *********************************************
+                    TEMA APPLICAZIONE
+     ********************************************* -->
+
+    <color name="primary">#1976D2</color>
+    <color name="primary_dark">#1565C0</color>
+    <color name="accent">#e91e63</color>
+    <color name="accent_dark">#C2185B</color>
+
+
+    <!-- *********************************************
+                    COLORI BASE
+     ********************************************* -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+
+    <!-- *********************************************
+                STILE BOTTONI
+     ********************************************* -->
+    <color name="bottone_normale">@color/accent</color>
+    <color name="bottone_selezionato">@color/accent_dark</color>
+    <color name="bottone_disabilitato">#BDBDBD</color>
+
+</resources>

@@ -8,6 +8,12 @@
         <item name="android:colorButtonNormal">@color/bottone</item>
         <item name="android:colorControlHighlight">@color/bottone_selezionato</item>
         <item name="android:buttonStyle">@style/ColoredButton</item>
+        <item name="android:alertDialogTheme">@style/AlertDialogCustom</item>
+    </style>
+
+    <style name="AlertDialogCustom" parent="android:Theme.Material.Light.Dialog.Alert">
+        <item name="android:colorPrimary">@color/primary</item>
+        <item name="android:colorAccent">@color/accent</item>
     </style>
 
     <style name="AppThemeDialog" parent="Theme.AppCompat.Light.DialogWhenLarge">
