@@ -33,10 +33,10 @@ public class ControlloIniziale {
         public void onClick(View view) {
             Log.d(TAG, "Azione inizia gioco...");
             ActivityIniziale activity = (ActivityIniziale) Applicazione.getInstance().getCurrentActivity();
-            VistaIniziale fragment = activity.getVistaIniziale();
-            String nome = fragment.getNome();
+            VistaIniziale vistaIniziale = activity.getVistaIniziale();
+            String nome = vistaIniziale.getNome();
             if (nome == null || nome.equals("")) {
-                fragment.setErroreNome(activity.getString(R.string.errore_nome));
+                vistaIniziale.setErroreNome(activity.getString(R.string.errore_nome));
                 return;
             }
             Modello modello = Applicazione.getInstance().getModello();

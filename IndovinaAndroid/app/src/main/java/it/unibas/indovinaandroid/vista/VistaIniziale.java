@@ -14,17 +14,17 @@ import it.unibas.indovinaandroid.R;
 
 public class VistaIniziale extends Fragment {
 
-    public static final String TAG = "VistaIniziale";
+    public static final String TAG = VistaIniziale.class.getSimpleName();
 
     private EditText textNome;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.vista_iniziale, container, false);
-        textNome = (EditText) vista.findViewById(R.id.testoNome);
-        FloatingActionButton bottoneInizia = (FloatingActionButton) vista.findViewById(R.id.bottoneInizia);
+        textNome = vista.findViewById(R.id.testoNome);
+        FloatingActionButton bottoneInizia = vista.findViewById(R.id.bottoneInizia);
         bottoneInizia.setOnClickListener(Applicazione.getInstance().getControlloIniziale().getAzioneIniziaGioco());
-        TextView textLink = (TextView) vista.findViewById(R.id.testoLink);
+        TextView textLink = vista.findViewById(R.id.testoLink);
         textLink.setOnClickListener(Applicazione.getInstance().getControlloIniziale().getAzioneLink());
         return vista;
     }

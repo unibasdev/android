@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
     <!--Mix-->
     <color name="primary">#3F51B5</color>
     <color name="primary_dark">#1A237E</color>
